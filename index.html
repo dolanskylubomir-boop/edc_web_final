@@ -1,723 +1,1283 @@
-<section class="aktuality">
-    <div class="container">
-        <h1>Aktuality EDC</h1>
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <!--single-page aplikace (SPA)-->
+    <meta charset="UTF-16">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Elektroenergetické datové centrum (EDC) – centrální platforma pro sdílení dat v české energetice. Podporujeme komunitní energetiku, akumulaci, flexibilitu a aktivní zákazníky.">
+    <meta name="keywords" content="EDC, elektroenergetické datové centrum, komunitní energetika, sdílení energie, akumulace, flexibilita, síťový semafor, OTE, ČR">
+    <meta name="author" content="Elektroenergetické datové centrum, a.s.">
+    <meta name="robots" content="index, follow">
 
-        <div class="aktuality-list">
- 
-            <!-- Řádek 1 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Tisková zpráva EDC</div>
-                <div class="aktualita-title">Změny v představenstvu EDC</div>
-                <div class="aktualita-text">
-                    13. března 2024 – Novým předsedou představenstva Elektroenergetického datového centra (EDC) byl dnes jmenován Petr Kusý. Bývalý radní Energetického regulačního úřadu (ERÚ) nahradil v čele společnosti Richarda Kabeleho, který...
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="EDC – Elektroenergetické datové centrum">
+    <meta property="og:description" content="Oficiální stránky EDC – klíčový pilíř moderní české energetiky.">
+    <meta property="og:image" content="https://tvojedomena.cz/Obrázky/og-image.jpg">
+    <meta property="og:url" content="https://tvojedomena.cz">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="EDC – Elektroenergetické datové centrum">
+    <meta name="twitter:description" content="Centrální platforma pro sdílení dat v české energetice">
+    <meta name="twitter:image" content="https://tvojedomena.cz/Obrázky/og-image.jpg">
+
+    <title>EDC – Elektroenergetické datové centrum | Sdílení, akumulace a flexibilita energie</title>
+    <link rel="canonical" href="https://tvojedomena.cz/">
+
+    <!-- Favicon + Apple Touch -->
+    <link rel="icon" href="Obrázky/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="Obrázky/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="styles.css?v=20260106123456">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Cookie banner inline styles -->
+    <style>
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            z-index: 9999;
+            display: none;
+        }
+        #cookie-banner p { margin: 0 0 10px 0; }
+        #cookie-banner button {
+            background: #fff;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #cookie-banner a { color: #fff; text-decoration: underline; }
+    </style>
+</head>
+
+<body>
+    <!-- Overlay pro mobilní menu -->
+    <div class="nav-overlay"></div>
+
+    <!-- Cookie banner -->
+    <div id="cookie-banner">
+        <p>
+            Tento web používá cookies k lepšímu zážitku, analýze návštěvnosti a personalizaci obsahu.
+            Více informací v <a href="/cookies/gdpr.pdf">Zásadách cookies</a>.
+        </p>
+        <button id="accept-all">Přijmout vše</button>
+        <button id="necessary-only">Pouze nezbytné</button>
+        <button id="reject-all">Odmítnout vše</button>
+    </div>
+
+     <!--     Banner poruchy 
+    <div id="error-banner" class="error-banner" role="alert" aria-live="assertive">
+        <div class="error-content">
+            <span class="error-icon">⚠️</span>
+            <div class="error-text">
+                Aktuálně řešíme technickou poruchu na webu. Omlouváme se za komplikace a děkujeme za trpělivost.
+                Pokud potřebujete okamžitou pomoc, kontaktujte nás na
+                <a href="mailto:info@edc-cr.cz">info@edc-cr.cz</a> nebo telefonicky.
+            </div>
+            <button class="close-btn" aria-label="Zavřít hlášení o poruše" title="Zavřít">
+                <span class="close-icon">&times;</span>
+            </button>
+        </div>
+    </div>-->
+
+    <!-- Hlavní obsah – dynamicky nahrazován -->
+    <main id="main-content" class="container">
+        <noscript>
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Jsme Elektroenergetické datové centrum.</h1>
+                    <p>
+                        Představujeme klíčový pilíř pro nová technická řešení. Umožňujeme přechod k moderní decentralizované,
+                        digitální a dekarbonizované elektroenergetice. Zajištujeme výměnu dat spojených s činnostmi energetického trhu.
+                        Podporujeme rozvoj komunitní energetiky. Přispíváme k posílení role aktivního zákazníka.
+                    </p>
                 </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=1" onclick="loadContent('zpravy_rizeni_content_1.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_1.pdf" download class="btn-stahnout">Stáhnout PDF</a>
+            </section>
+
+            <section class="modals-section">
+                <div class="modal-trigger"><h3>O společnosti</h3><p>Vše o EDC</p></div>
+                <div class="modal-trigger"><h3>Kontakty</h3><p>Adresy a sídla</p></div>
+                <div class="modal-trigger"><h3>Kariéra</h3><p>Práce v EDC</p></div>
+                <div class="modal-trigger"><h3>Interoperabilita dat</h3><p>Dokumenty</p></div>
+                <div class="modal-trigger"><h3>M2M komunikace</h3><p>Dokumenty</p></div>
+                <div class="modal-trigger"><h3>Sdílení</h3><p>Vše co byste měli vědět</p></div>
+                <div class="modal-trigger"><h3>Akumulace</h3><p>Vše co byste měli vědět</p></div>
+                <div class="modal-trigger"><h3>Flexibilita</h3><p>Vše co byste měli vědět</p></div>
+                <div class="modal-trigger"><h3>Síťový semafor</h3><p>Vše co byste měli vědět</p></div>
+                <div class="modal-trigger"><h3>EDC slovník energetiky</h3><p>Vše co byste měli vědět</p></div>
+                <div class="modal-trigger"><h3>FAQ</h3><p>Nejčastější dotazy</p></div>
+                <div class="modal-trigger"><h3>Mapa webu</h3><p>Struktura stránek EDC</p></div>
+                <div class="modal-trigger"><h3>Popis TEST webu</h3><p>Popis TEST webu</p></div>
+            </section>
+        </noscript>
+    </main>
+
+    <!-- ====================== VELKÉ MODÁLY – vždy přítomné v DOM ====================== -->
+    <div id="modal1" class="modal">
+        <div class="modal-content has-scroll" style="background-image: url('obrázky/zarovky.png');">
+            <span class="close" onclick="closeModal('modal1')">×</span>
+            <div class="modal-inner">
+                <div>
+                    <h2>Společnost EDC</h2>
+                    <p>Chcete vědět nejnovější informace a co se o nás píše? Vše o společnosti EDC.</p>
+                </div>
+                <div class="sub-modal-grid">
+                    <div class="sub-modal-trigger" 
+                         onclick="window.loadContent && window.loadContent('aktuality_content.html'); closeModal('modal1')">
+                        <h3>Aktuality a tiskové zprávy</h3>
+                    </div>
+                    <div class="sub-modal-trigger" 
+                         onclick="window.loadContent && window.loadContent('struktura_spolecnosti_content.html'); closeModal('modal1')">
+                        <h3>Struktury společnosti</h3>
+                    </div>
+                    <div class="sub-modal-trigger" 
+                         onclick="window.loadContent && window.loadContent('povinna-sdeleni_content.html'); closeModal('modal1')">
+                        <h3>Povinná sdělení</h3>
+                    </div>
                 </div>
             </div>
-
-            <!-- Řádek 2 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Vzniká energetický „centrální mozek lidstva“. Posílat energetická data přes něj bude postupně úplně každý.</div>
-                <div class="aktualita-text">
-                    27. března 2024 – Tuzemská energetika zaznamenává zrod nového významného hráče. Nedisponuje ani výrobními zdroji, ani fyzickou infrastrukturou v podobě vedení velmi vysokého napětí. Elektroenergetické datové centrum (EDC) bude však stát v samém středu...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=2" onclick="loadContent('zpravy_rizeni_content_2.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_2.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 3 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Tisková zpráva EDC</div> 
-                <div class="aktualita-title">Finišují přípravy na modernizaci české energetiky. Těžit z ní budou zákazníci</div>
-                <div class="aktualita-text">
-                    17. dubna 2024 – Úpravy zákona z dílny Ministerstva průmyslu a obchodu (MPO) přinesou výraznou modernizaci české energetiky a na to, aby všechny změny proběhly úspěšně, se připravuje celý sektor. Zahrnuje to nejen postupný...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=3" onclick="loadContent('zpravy_rizeni_content_3.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_3.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 4 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Událost</div> 
-                <div class="aktualita-title">Příprava dočasného řešení pro oblast sdílení elektřiny</div>
-                <div class="aktualita-text">
-                    18. dubna 2024 – Ve spolupráci se členy ČSRES uskutečnil první odborný workshop Elektroenergetického datového centra (EDC). Hlavním tématem bylo představení a popis dočasného řešení fungování EDC pro zajištění sdílení
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=4" onclick="loadContent('zpravy_rizeni_content_4.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_4.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 5 -->
-             <div class="aktualita-category">Tisková zpráva EDC</div> 
-            <div class="aktualita-row">
-                <div class="aktualita-title">Elektroenergetické datové centrum předložilo s předstihem ERÚ svůj řád. Jeho schválení je podmínkou pro zahájení sdílení elektřiny</div>
-                <div class="aktualita-text">
-                    11. června 2024 – EDC vypracovalo svůj řád čtyři měsíce před zákonem stanoveným termínemPravidla pro zájemce o komunitní energetiku nyní musí schválit ERÚTechnické specifikace registrací, podmínky přístupu účastníků trhu, příjem a poskytování dat a..
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=5" onclick="loadContent('zpravy_rizeni_content_5.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_5.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 6 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Tisková zpráva EDC</div> 
-                <div class="aktualita-title">Elektroenergetické datové centrum hledá dodavatele IT řešení a souvisejících služeb</div>
-                <div class="aktualita-text">
-                    13. června 2024 – EDC ve veřejném výběrovém řízení poptává návrh, vývoj, testování a nasazení nového informačního systému a souvisejících služebNové řešení má umožnit České republice přechod k moderní decentralizované elektroenergeticeO získání zakázky rozhodne...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=6" onclick="loadContent('zpravy_rizeni_content_6.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_6.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 7 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Tisková zpráva EDC</div> 
-                <div class="aktualita-title">Elektroenergetické datové centrum se připravuje na ostrý start. Pro zájemce o komunitní energetiku spustí informační linku</div>
-                <div class="aktualita-text">
-                    26. června 2024 – Informace o principech a fungování komunitní energetiky poskytne linka i široké veřejnosti.Call centrum nebude poskytovat komerční poradenství spojené s návrhy optimálního řešení pro daný subjekt sdílení.EDC začne od 1.8. přijímat...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=7" onclick="loadContent('zpravy_rizeni_content_7.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_7.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 8 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Tisková zpráva EDC</div> 
-                <div class="aktualita-title">Komunitní energetika odstartovala. Zájemci o sdílení elektřiny se mohou registrovat u Elektroenergetického datového centra</div>
-                <div class="aktualita-text">
-                    1. srpna 2024 – EDC zahájilo činnost tzv. dočasného řešení, které umožňuje sdílení elektřinyPoslední podmínkou pro start EDC bylo schválení jeho Řádu Energetickým regulačním úřademS plným provozem, který rozšíří činnost i služby EDC týkající...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=8" onclick="loadContent('zpravy_rizeni_content_8.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_8.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 9 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Událost</div> 
-                <div class="aktualita-title">Kulatý stůl: EDC zahájilo svou činnost</div>
-                <div class="aktualita-text">
-                    1. srpna 2024 – Kulatý stůl: Elektroenergetické datové centrum (EDC) zahájilo svou činnost a komunitní energetika v Česku tímto oficiálně odstartovala. Dne 1. 8. 2024 uspořádalo EDC ve spolupráci s MPO kulatý stůl, kde oficiálně oznámilo...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=9" onclick="loadContent('zpravy_rizeni_content_9.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_9.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 10 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Začíná éra komunitní energetiky. Zájemci se mohou hlásit ke sdílení proudu</div>
-                <div class="aktualita-text">
-                    1. srpna 2024 – Sdílení elektřiny se už brzy stane realitou. Od začátku srpna se mohou zájemci o sdílení přihlašovat u Elektroenergetického datového centra. Za měsíc by jich mohly být stovky, energetických společenství se...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=10" onclick="loadContent('zpravy_rizeni_content_10.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_10.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 11 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Tvrdá stížnost. Němci mají ke komplexnímu sdílení elektřiny ještě daleko</div>
-                <div class="aktualita-text">
-                    13. srpna 2024 – Prvního srpna odstartovala éra sdílení elektřiny v České republice. Elektroenergetické datové centrum zahájilo svoji činnost a v osm hodin ráno spustilo možnost registrace, která je prvním nutným krokem k možnosti...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=11" onclick="loadContent('zpravy_rizeni_content_11.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_11.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 12 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Jak začít sdílet elektřinu a co je nutné splnit u ČEZ, E.ON a PRE</div>
-                <div class="aktualita-text">
-                    16. srpna 2024 – Od 1. srpna 2024 je možné komunitně sdílet vaším zařízením vyrobenou elektřinu, nejčastěji z fotovoltaiky, kterou můžete posílat na jinou vaši budovu, někomu z vaší rodiny či přátel. Co je...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=12" onclick="loadContent('zpravy_rizeni_content_12.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_12.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 13 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Sdílení elektřiny zaujalo tisíce lidí, posílat přebytky má jít v září</div>
-                <div class="aktualita-text">
-                    23. srpna 2024 – Češi se už tři týdny hlásí ke sdílení elektřiny. Zájemci se mohou od 1. srpna registrovat u Elektroenergetického datového centra. EDC řeší drobné provozní záležitosti, nejčastěji nesprávně vyplnění formuláře a překlepy. Dodavatelské...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=13" onclick="loadContent('zpravy_rizeni_content_13.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_13.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 14 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Tisíce lidí chtějí sdílet elektřinu. Deník přibližuje, jak začít</div>
-                <div class="aktualita-text">
-                    25. srpna 2024 – Do éry komunitní energetiky v srpnu vkročili lidé v Česku. Díky povolení sdílení elektřiny z obnovitelných zdrojů se rozšiřují možnosti majitelů fotovoltaiky. Jedním z cílů státu při tomhle kroku je...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=14" onclick="loadContent('zpravy_rizeni_content_14.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_14.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 15 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Zájemců o sdílení elektřiny už jsou tisíce. Ministerstvo průmyslu sepsalo desatero, jak na to</div>
-                <div class="aktualita-text">
-                    4. září 2024 – Neplaťte za služby, které nepotřebujete, a inspirujte se u zkušenějších. Takové rady dává ministerstvo průmyslu a obchodu v novém desateru, které připravilo ke komunitní energetice. Díky ní je možné si...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=15" onclick="loadContent('zpravy_rizeni_content_15.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_15.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 16 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Tisková zpráva EDC</div> 
-                <div class="aktualita-title">V ČR se za první měsíc přihlásilo ke sdílení elektřiny téměř 8000 zájemců</div>
-                <div class="aktualita-text">
-                    12. září 2024 – Podepsanou smlouvu o přístupu do EDC má více než polovina registrovaných. Největší zájem je o sdílení elektřiny „sám sobě“. Ve třetině případů distributoři nemohli provést výměnu elektroměru. Zájemcům doporučují ověřit si splnění...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=16" onclick="loadContent('zpravy_rizeni_content_16.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_16.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 17 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Tisková zpráva EDC</div> 
-                <div class="aktualita-title">V ČR mezi sebou elektřinu sdílí už více než 4000 výroben a 3500 odběrných míst</div>
-                <div class="aktualita-text">
-                    10. října 2024 – První objem sdílené elektřiny odpovídá měsíční spotřebě téměř 500 domácností. Průměrná doba vyřízení žádosti o registraci jsou dva dny. Distributoři elektřiny nainstalovali v porovnání se srpnem více než trojnásobné množství chytrých elektroměrů,...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=17" onclick="loadContent('zpravy_rizeni_content_17.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_17.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 18 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Komunitní energetika v Česku na rozcestí. Podaří se nastartovat sdílení elektřiny?</div>
-                <div class="aktualita-text">
-                    11. října 2024 – Rozvoj komunitní energetiky v Česku brzdila až do loňského roku nedokonalá legislativa. Kýžený pokrok má přinést novela energetického zákona (Lex OZE II), která podle Ministerstva průmyslu a obchodu (MPO) umožní lidem,...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=18" onclick="loadContent('zpravy_rizeni_content_18.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_18.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 19 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Energetická novela uleví síti. Solárníci díky ní mohou i vydělat</div>
-                <div class="aktualita-text">
-                    24. října 2024 – Domácnosti a firmy si budou moci mnohem lépe řídit výrobu a spotřebu elektřiny. Umožní to novela energetického zákona, která uzákoní tzv. agregaci a flexibilitu. Aktuálně ji mají na stole poslanci.Ve...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=19" onclick="loadContent('zpravy_rizeni_content_19.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_19.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 20 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Petr Kusý: Sdílení elektřiny a komunitní energetika zároveň otevírá dveře k dalším prvkům moderní energetiky</div>
-                <div class="aktualita-text">
-                    9. listopadu 2024 – Rozhovor s Petrem Kusým, předsedou představenstva Elektroenergetického datového centra.Petr Kusý je předsedou představenstva Elektroenergetického datového centra (EDC). Jde se o novou společnost, která vznikla podle energetického zákona s cílem umožnit efektivní...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=20" onclick="loadContent('zpravy_rizeni_content_20.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_20.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 21 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Tisková zpráva EDC</div> 
-                <div class="aktualita-title">Češi mezi sebou sdíleli už přes 320 MWh</div>
-                <div class="aktualita-text">
-                    11. listopadu 2024 – Elektroenergetické datové centrum (EDC) zaregistrovalo za první tři měsíce od zahájení sdílení elektřiny v České republice 5120 výroben a 5508 odběrných míst. Počet uzavřených smluv s EDC...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=21" onclick="loadContent('zpravy_rizeni_content_21.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_21.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 22 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Domácnosti pomůžou vyrovnávat síť už do tří let, soustava je připravená, říká Šolc z ČEPS</div>
-                <div class="aktualita-text">
-                    13. listopadu 2024 – Většímu rozšíření agregačních bloků na hladině nízkého napětí brání vedle chybějící legislativy také vysoká cena technologií.Uhelné elektrárny postupně nahradíme i díky rostoucímu potenciálu agregačních bloků, věří Pavel Šolc, člen představenstva...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=22" onclick="loadContent('zpravy_rizeni_content_22.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_22.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 23 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Nabij baterii a ještě ti zaplatíme. Delta Green jako první v Česku spouští obchodování flexibility pro domácnosti</div>
-                <div class="aktualita-text">
-                    18. listopadu 2024 – Společnost Delta Green spustila jako první na českém trhu do ostrého provozu dlouho očekávanou službu obchodování flexibility pro domácnosti. Statisícům domácností se tím otevírá možnost dostat zaplaceno za odběr elektřiny...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=23" onclick="loadContent('zpravy_rizeni_content_23.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_23.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 24 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Tisková zpráva EDC</div> 
-                <div class="aktualita-title">ČEZ Distribuce letos investuje do sítí rekordních 19 mld</div>
-                <div class="aktualita-text">
-                    2. prosince 2024 – Společnost ČEZ Distribuce letos investuje do své distribuční soustavy rekordních 19,7 miliard korun. Pro rychlejší připojení zákaznických požadavků zejména v oblasti obnovitelných zdrojů je vyhrazeno 8,8 miliardy korun.„Průběžně...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=24" onclick="loadContent('zpravy_rizeni_content_24.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_24.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 25 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Praha osazuje střechy soláry. Elektřina se spotřebovává v Zoo, nebo bazénu</div>
-                <div class="aktualita-text">
-                    3. prosince 2024 – Hlavní město Praha se pustilo do budování solárních elektráren na střechách. Vyrobenou elektřinu sdílí a spotřebovává například v zoologické zahradě, botanické zahradě, nebo bazénu Šutce.Nejefektivnější je spotřeba na místě„Nejefektivnější je,...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=25" onclick="loadContent('zpravy_rizeni_content_25.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_25.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 26 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Tisková zpráva EDC</div> 
-                <div class="aktualita-title">100 dní sdílení elektřiny v ČR</div>
-                <div class="aktualita-text">
-                    9. prosince 2024 – Počet skupin sdílejících elektřinu v České republice překonal v listopadu hranici pěti tisíc. Největší zastoupení má mezi nimi podle Elektroenergetického datového centra (EDC) sdílení v režimu tzv. aktivního...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=26" onclick="loadContent('zpravy_rizeni_content_26.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_26.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 27 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Co je potřeba vědět před instalací fotovoltaiky na bytových domech</div>
-                <div class="aktualita-text">
-                    3. ledna 2025 – Fotovoltaické elektrárny se v Česku stále častěji zabydlují na střechách bytových domů. Mnoho sdružení vlastníků jednotek (SVJ) a bytových družstev (BD) s nimi ale stále ještě váhá. Pojďme si proto projít, co všechno...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=27" onclick="loadContent('zpravy_rizeni_content_27.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_27.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 28 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Tisková zpráva EDC</div> 
-                <div class="aktualita-title">Od založení po více než 1000 MWh sdílené elektřiny</div>
-                <div class="aktualita-text">
-                    13. ledna 2025 – Česká republika vykročila před rokem na cestu sdílení elektřiny v rámci komunitní energetiky. V prosinci 2023 vzniklo podle novely energetického zákona LEX OZE II Elektroenergetické datové centrum (EDC)....
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=28" onclick="loadContent('zpravy_rizeni_content_28.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_28.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 29 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Jak se nakonec změní dotace na domácí fotovoltaiku. Víme, jak je využít na maximum</div>
-                <div class="aktualita-text">
-                    27. ledna 2025 – Když začátkem prosince ministerstvo životního prostředí oznámilo, že plánuje omezit dotace na výstavbu domácích fotovoltaických elektráren, spustilo to vlnu kritiky. A to hlavně ze strany instalačních firem, na které tvrdě...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=29" onclick="loadContent('zpravy_rizeni_content_29.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_29.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 30 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Elektroenergetické datové centrum urychlilo sdílení elektřiny o několik měsíců</div>
-                <div class="aktualita-text">
-                    7. února 2025 – Česká republika vykročila před rokem na cestu sdílení elektřiny v rámci komunitní energetiky. V prosinci 2023 vzniklo podle novely energetického zákona LEX OZE II Elektroenergetické datové centrum (EDC). Po dvanácti měsících...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=30" onclick="loadContent('zpravy_rizeni_content_30.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_30.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 31 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Energetika se mění a bude se měnit</div>
-                <div class="aktualita-text">
-                    20. února 2025 – Elektroenergetické datové centrum (EDC) vzniklo 13. 12. 2023 poté, co potřebná legislativa spatřila „světlo světa“. Zatímco zhruba první polovina loňského roku byla ve znamení přípravných prací, od začátku července byla...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=31" onclick="loadContent('zpravy_rizeni_content_31.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_31.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 32 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Tisková zpráva EDC</div> 
-                <div class="aktualita-title">EG.D výrazně investuje do modernizace distribuční sítě</div>
-                <div class="aktualita-text">
-                    24. února 2025 – Vloni distribuční společnost EG.D, člen skupiny E.ON, investovala do modernizace a rozvoje distribuční sítě 8,9 miliard korun. Podobný objem investic plánuje i pro letošní rok 2025. Velká část těchto prostředků...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=32" onclick="loadContent('zpravy_rizeni_content_32.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_32.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 33 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Událost</div> 
-                <div class="aktualita-title">Příprava legislativních nařízení</div>
-                <div class="aktualita-text">
-                    14. března 2025 – Aktuálně EDC čeká příprava implementace legislativních nařízení, která byla přijata v rámci novely Energetického zákona č. 458/2000 Sb., známé jako LEX OZE III. Ta zavádí definici nový pojmů, z nichž pro EDC...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=33" onclick="loadContent('zpravy_rizeni_content_33.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_33.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 34 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Zelenou energii sdílejí především menší lokální projekty: rodiny, sousedé, obce i firmy</div>
-                <div class="aktualita-text">
-                    15. března 2025 – Komunitní energetika, tedy možnost sdílet energii z obnovitelných zdrojů i v jiných místech, než kde byla přímo vyrobena, v Česku prakticky zahájila loni v září. Zájem o ni předčil očekávání.Už...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=34" onclick="loadContent('zpravy_rizeni_content_34.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_34.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 35 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Na službách výkonové rovnováhy se dá dlouhodobě vydělávat</div>
-                <div class="aktualita-text">
-                    17. března 2025 – Bouřlivé změny na energetickém trhu, včetně změny zdrojové základny, přinášejí nové příležitosti pro účastníky trhu. Jak funguje celý systém služeb výkonové rovnováhy popisuje v rozhovoru pro All for Power Martin...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=35" onclick="loadContent('zpravy_rizeni_content_35.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_35.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 36 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Pozor na mýty o sdílení elektřiny. Skoro 40 procent lidí si myslí, že si ji mohou nechat na později</div>
-                <div class="aktualita-text">
-                    21. března 2025 – Sdílení přebytků elektřiny z vlastní fotovoltaické elektrárny bývá výhodnější než její prodej dodavateli energie. Ani při sdílení se ale lidé nevyhnou poplatkům za distribuci a obnovitelné zdroje.Do sdílení elektřiny se...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=36" onclick="loadContent('zpravy_rizeni_content_36.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_36.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 37 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Soláry na střechách se můžou jejich majitelům také pěkně prodražit. Desítkám tisíc těch, kdo si je pořídili s vidinou výrazných úspor za elektřinu, totiž budou od července hrozit pokuty v...</div>
-                <div class="aktualita-text">
-                    8. dubna 2025 – Popis aktuality 37...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=37" onclick="loadContent('zpravy_rizeni_content_37.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_37.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 38 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Sdílení je jen první krok. Možností, jak nakládat s energií, začne přibývat, říká Petr Kusý, který má pod palcem digitalizaci energetiky</div>
-                <div class="aktualita-text">
-                    9. dubna 2025 – Kdysi si zákazníci vystačili s tím, že odebírali elektřinu od jednoho dodavatele a platili pravidelné zálohy. Už řadu let si však mohou vybírat z nepřeberného množství tarifů od různých obchodníků....
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=38" onclick="loadContent('zpravy_rizeni_content_38.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_38.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 39 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Tisková zpráva EDC</div> 
-                <div class="aktualita-title">S příchodem jara se probudilo i sdílení elektřiny: V březnu Češi nasdíleli rekordní množství</div>
-                <div class="aktualita-text">
-                    28. dubna 2025 – Elektroenergetické datové centrum (EDC) eviduje ke konci prvního čtvrtletí prudký nárůst objemu sdílené elektřiny. S větším počtem slunečných dnů vzrostl výrazněji i počet registrací u EDC a...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=39" onclick="loadContent('zpravy_rizeni_content_39.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_39.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 40 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Tisková zpráva EDC</div> 
-                <div class="aktualita-title">Množství sdílené elektřiny v Česku překročilo hranici 10 GWh. Zájem domácností i firem dál roste</div>
-                <div class="aktualita-text">
-                    26. května 2025 – Statistiky Elektroenergetického datového centra (EDC) zaznamenaly v dubnu další zásadní milník. Češi si mezi sebou od zahájení sdílení v loňském srpnu vyměnili již více než 10...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=40" onclick="loadContent('zpravy_rizeni_content_40.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_40.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 41 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Půl roku sdílení elektřiny v Česku: Vývoj, statistiky a budoucí směry</div>
-                <div class="aktualita-text">
-                    9. června 2025 – Sdílení elektřiny mezi domácnostmi, firmami a obcemi v Česku se po spuštění centrálního systému EDC v srpnu 2024 rozběhlo překvapivě rychlým tempem. Za půl roku se do něj zapojilo téměř 23 tisíc účastníků, kteří sdíleli...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=41" onclick="loadContent('zpravy_rizeni_content_41.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_41.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 42 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Elektřinu budou sdílet statisíce míst. Datové centrum poroste</div>
-                <div class="aktualita-text">
-                    1. července 2025 – Žádostí o sdílení elektřiny přibývá. Předseda představenstva elektroenergetického datového centra, které sdílení vyřizuje, doufá, že se počet sdílejících ze současných 27 000 zvýší na více než desetinásobek.O sdílení elektřiny byl od začátku velký...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=42" onclick="loadContent('zpravy_rizeni_content_42.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_42.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 43 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Tisková zpráva EDC</div> 
-                <div class="aktualita-title">Stovkám českých domácností se může od 1. srpna zastavit sdílení elektřiny</div>
-                <div class="aktualita-text">
-                    28. července 2025 – Elektroenergetické datové centrum (EDC) vyzývá registrované zájemce o sdílení, aby si zkontrolovali, že mají uzavřenou tzv. smlouvu o odpovědnosti za odchylku. Z více než 27 tisíc...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=43" onclick="loadContent('zpravy_rizeni_content_43.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_43.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 44 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Tisková zpráva EDC</div> 
-                <div class="aktualita-title">Počty zájemců rostou, otázek ubývá: Češi se naučili sdílet elektřinu</div>
-                <div class="aktualita-text">
-                    25. srpna 2025 – Uplynul rok od spuštění registrací u Elektroenergetického datového centra (EDC) ke sdílení elektřiny a třináct měsíců od zprovoznění poradenské linky – call centra EDC. Aktuálně...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=44" onclick="loadContent('zpravy_rizeni_content_44.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_44.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 45 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Sledujeme tisíce elektráren. Šéf datového centra o transformaci energetiky v Česku</div>
-                <div class="aktualita-text">
-                    11. září 2025 – Proměny české energetiky způsobené novými elektrárnami i toky elektřiny v celé energetické soustavě pomáhá už přes rok řešit Elektroenergetické datové centrum (EDC). „Jsme na začátku a sdílení elektřiny je pouze...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=45" onclick="loadContent('zpravy_rizeni_content_45.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_45.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 46 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Tisková zpráva EDC</div> 
-                <div class="aktualita-title">Sdílení elektřiny může významně snížit náklady na energii</div>
-                <div class="aktualita-text">
-                    30. září 2025 – Počet zájemců o sdílení elektřiny v ČR překonal hranici 30 tisíc a celkový objem dosáhl více než 43 GWh. To by pro představu pokrylo spotřebu veřejného..
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=46" onclick="loadContent('zpravy_rizeni_content_46.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_46.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 47 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Elektrotechnici nad zlato. Na trhu jich je málo, firmy se o ně přetahují</div>
-                <div class="aktualita-text">
-                    29. října 2025 – Zní to jako zaměstnání z budoucnosti. Státní společnost ČEPS, která má na starost tuzemskou přenosovou soustavu, hledá „architekta dispečerských řídicích systémů“. A zaměstnance na podobné pozice shánějí i další české...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=47" onclick="loadContent('zpravy_rizeni_content_47.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_47.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 48 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Tisková zpráva EDC</div> 
-                <div class="aktualita-title">Do sdílení elektřiny se zapojily už i vodní či větrné elektrárny</div>
-                <div class="aktualita-text">
-                    30. října 2025 – Rok od prvního přenosu sdílené elektřiny přesáhl její celkový objem v České republice hranici 50 GWh. To odpovídá průměrné roční spotřebě 16 000 domácností. Elektroenergetické datové centrum (EDC)...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=48" onclick="loadContent('zpravy_rizeni_content_48.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_48.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 49 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">EDC zajistí efektivní datovou podporu pro potřeby nové energetiky</div>
-                <div class="aktualita-text">
-                    10. listopadu 2025 – Petr Kusý – předseda představenstva Elektroenergetického datového centra (EDC) hodnotí pro časopis Energo MAG více než rok působení této instituce na domácím energetickém trhu. Přitom zdůraznil jednu věc, na niž...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=49" onclick="loadContent('zpravy_rizeni_content_49.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_49.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 50 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Tisková zpráva EDC</div> 
-                <div class="aktualita-title">Sdílení elektřiny je v ČR zatím závislé na slunečním svitu</div>
-                <div class="aktualita-text">
-                    25. listopadu 2025 – Vývoj objemu sdílené elektřiny v České republice kopíruje množství slunečního svitu v jednotlivých měsících. Vyplývá to z porovnání statistik Elektroenergetického datového centra (EDC) za první rok sdílení...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=50" onclick="loadContent('zpravy_rizeni_content_50.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_50.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 51 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Na baterii může vydělávat i domácnost bez soláru. Kvůli ceně je ale zájem malý</div>
-                <div class="aktualita-text">
-                    29. listopadu 2025 – Domácnosti mají od října více možností, jak využít a vydělávat na své baterii k ukládání elektřiny. I když to zákon umožňuje, samostatnou baterii bez solární elektrárny domácnosti nevyužívají, jsou totiž drahé.Když si domácnost...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=51" onclick="loadContent('zpravy_rizeni_content_51.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_51.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 52 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Česká energetická společenství se učí za pochodu, stávající systém má své mouchy</div>
-                <div class="aktualita-text">
-                    1. prosince 2025 – Slunce svítí a fotovoltaická elektrárna na střeše školy vyrábí víc, než budova v danou chvíli potřebuje. Přebytky tak posílá městské nemocnici, sousední firmě nebo nedalekému bytovému domu. Logický princip, který...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=52" onclick="loadContent('zpravy_rizeni_content_52.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_52.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 53 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">EDC v nové fázi: Od sdílení k chytré regulaci sítě</div>
-                <div class="aktualita-text">
-                    10. prosince 2025 – Elektroenergetické datové centrum (EDC), a. s., zahájilo svou činnost před více než rokem, kdy v rámci digitální transformace české energetiky nabídlo svou první funkcionalitu, sdílení elektřiny. V souladu s novelizovanou...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=53" onclick="loadContent('zpravy_rizeni_content_53.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_53.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 54 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Tisková zpráva EDC</div> 
-                <div class="aktualita-title">Češi by sdílenou elektřinou dokázali rozsvítit vánoční strom</div>
-                <div class="aktualita-text">
-                    18. prosince 2025 – Do sdílení elektřiny se v České republice zapojilo již více než 35 tisíc účastníků. Ti si jen v listopadu mezi sebou vyměnili přes 3 GWh elektřiny, která by...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=54" onclick="loadContent('zpravy_rizeni_content_54.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_54.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
-
-            <!-- Řádek 55 -->
-            <div class="aktualita-row">
-                <div class="aktualita-category">Mediální výstup</div> 
-                <div class="aktualita-title">Česká energetická společenství nabírají na síle. Už je jich téměř 100, ale potýkají se s omezeními</div>
-                <div class="aktualita-text">
-                    5. ledna 2026 – První energetická společenství, jež sdružují obce, příspěvkové organizace, soukromé firmy i domácnosti a umožňují sdílení přebytků elektřiny z obnovitelných zdrojů mezi svými členy, začala vznikat už před pár lety. Čekalo...
-                </div>
-                <div class="aktualita-buttons">
-                    <a href="zpravy_rizeni.html?id=55" onclick="loadContent('zpravy_rizeni_content_55.html'); event.preventDefault();" class="btn-cist">Číst</a>
-                    <a href="aktuality/zprava_55.pdf" download class="btn-stahnout">Stáhnout PDF</a>
-                </div>
-            </div>
- 
         </div>
     </div>
-</section>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content" style="background-image: url('obrázky/zarovky.png');">
+            <span class="close" onclick="closeModal('modal2')">×</span>
+            <div class="modal-inner">
+                <div><h2>Zde najdete všechny dostupné kontakty.</h2><p>Neváhejte nás kontaktovat.</p></div>
+                <div class="sub-modal-grid">
+                    <div class="sub-modal-trigger" onclick="openSubModal('sub2-1')"><h3>Fakturační údaje</h3></div>
+                    <div class="sub-modal-trigger" onclick="openSubModal('sub2-2')"><h3>Korespondenční adresa</h3></div>
+                    <div class="sub-modal-trigger" onclick="openSubModal('sub2-3')"><h3>Sídlo společnosti</h3></div>
+                    <div class="sub-modal-trigger" onclick="openSubModal('sub2-4')"><h3>Call centrum EDC</h3></div>
+                    <div class="sub-modal-trigger" onclick="openSubModal('sub2-5')"><h3>YouTube kanál EDC</h3></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content has-scroll" style="background-image: url('obrázky/zarovky.png');">
+            <span class="close" onclick="closeModal('modal5')">×</span>
+            <div class="modal-inner">
+                <div>
+                    <h2>Dokumenty pro distributory, agregátory a obchodníky</h2>
+                    <p>Vše o automatické komunikaci a další manuály naleznete zde.</p>
+                </div>
+                <div class="sub-modal-grid">
+                    <div class="sub-modal-trigger" onclick="loadContent('M2M_sdileni_content.html'); closeModal('modal5')">
+                        <h3>M2M komunikace sdileni, akumulace</h3>
+                    </div>
+                    <div class="sub-modal-trigger" onclick="loadContent('M2M_semafor_content.html'); closeModal('modal5')">
+                        <h3>M2M komunikace síťový semafor</h3>
+                    </div>
+                    <div class="sub-modal-trigger" onclick="loadContent('M2M_flexibilita_content.html'); closeModal('modal5')">
+                        <h3>M2M komunikace agregace, technická flexibilita</h3>
+                    </div>
+                </div>
+                <div class="modal-btn" onclick="loadContent('M2M_content.html'); closeModal('modal5')">
+                    Více informací →
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content has-scroll" style="background-image: url('obrázky/zarovky.png');">
+            <span class="close" onclick="closeModal('modal6')">×</span>
+            <div class="modal-inner">
+                <div>
+                    <h2>Sdílení</h2>
+                    <p>Vše o sdílení elektřiny a Portálu EDC naleznete zde.</p>
+                </div>
+                <div class="sub-modal-grid">
+                    <div class="sub-modal-trigger" onclick="loadContent('sdileni_video_content.html'); closeModal('modal6')">
+                        <h3>Videomanuály</h3>
+                    </div>
+                    <div class="sub-modal-trigger" onclick="loadContent('sdileni_dokumenty_content.html'); closeModal('modal6')">
+                        <h3>Dokumenty ke stažení</h3>
+                    </div>
+                    <div class="sub-modal-trigger" onclick="loadContent('sdileni_FAQ_content.html'); closeModal('modal6')">
+                        <h3>Sdílení souhrn</h3>
+                    </div>
+                </div>
+                    <div class="modal-btn" onclick="window.location.href = 'sdileni_mapa.html'; closeModal('modal6')">
+                        Proces sdíleni v kostce →
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal7" class="modal">
+        <div class="modal-content has-scroll" style="background-image: url('obrázky/zarovky.png');">
+            <span class="close" onclick="closeModal('modal7')">×</span>
+            <div class="modal-inner">
+                <div>
+                    <h2>Akumulace</h2>
+                    <p>Vše o akumulaci elektřiny a Portálu EDC naleznete zde.</p>
+                </div>
+                <div class="sub-modal-grid">
+                    <div class="sub-modal-trigger" onclick="loadContent('akumulace_video_content.html'); closeModal('modal7')">
+                        <h3>Videomanuály</h3>
+                    </div>
+                    <div class="sub-modal-trigger" onclick="loadContent('akumulace_dokumenty_content.html'); closeModal('modal7')">
+                        <h3>Dokumenty ke stažení</h3>
+                    </div>
+                    <div class="sub-modal-trigger" onclick="loadContent('akumulace_FAQ_content.html'); closeModal('modal7')">
+                        <h3>Akumulace souhrn</h3>
+                    </div>
+                </div>
+                <div class="modal-btn" onclick="loadContent('akumulace_content.html'); closeModal('modal7')">
+                    Více informací →
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal8" class="modal">
+        <div class="modal-content has-scroll" style="background-image: url('obrázky/zarovky.png');">
+            <span class="close" onclick="closeModal('modal8')">×</span>
+            <div class="modal-inner">
+                <div>
+                    <h2>Flexibilita</h2>
+                    <p>Vše o Flexibilitě naleznete zde.</p>
+                </div>
+                <div class="sub-modal-grid">
+                    <div class="sub-modal-trigger" onclick="loadContent('flexibilita_video_content.html'); closeModal('modal8')">
+                        <h3>Videomanuály</h3>
+                    </div>
+                    <div class="sub-modal-trigger" onclick="loadContent('flexibilita_dokumenty_content.html'); closeModal('modal8')">
+                        <h3>Dokumenty ke stažení</h3>
+                    </div>
+                    <div class="sub-modal-trigger" onclick="loadContent('flexibilita_FAQ_content.html'); closeModal('modal8')">
+                        <h3>Flexibilita souhrn</h3>
+                    </div>
+                </div>
+                <div class="modal-btn" onclick="loadContent('flexibilita_content.html'); closeModal('modal8')">
+                    Více informací →
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal9" class="modal">
+        <div class="modal-content has-scroll" style="background-image: url('obrázky/zarovky.png');">
+            <span class="close" onclick="closeModal('modal9')">×</span>
+            <div class="modal-inner">
+                <div>
+                  <h2>Síťový semafor</h2>
+                  <p>Vše o Síťovém semaforu naleznete zde.</p>
+                </div>
+                <div class="sub-modal-grid">
+                    <div class="sub-modal-trigger" onclick="loadContent('semafor_video_content.html'); closeModal('modal9')">
+                        <h3>Videomanuály</h3>
+                    </div>
+                    <div class="sub-modal-trigger" onclick="loadContent('semafor_dokumenty_content.html'); closeModal('modal9')">
+                        <h3>Dokumenty ke stažení</h3>
+                    </div>
+                    <div class="sub-modal-trigger" onclick="loadContent('semafor_FAQ_content.html'); closeModal('modal9')">
+                        <h3>Semafor souhrn</h3>
+                    </div>
+                </div>
+                <div class="modal-btn" onclick="window.location.href = ('semafor_mapa.html'); closeModal('modal9')">
+                    Proces v kostce →
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kontaktní sub-modály -->
+    <div id="sub2-1" class="sub-modal">
+        <div class="sub-modal-content">
+            <span class="sub-close" onclick="closeSubModal('sub2-1')">×</span>
+            <h2>Fakturační údaje</h2>
+            <strong>Elektroenergetické datové centrum, a.s.</strong><br>
+            IČO: 21020264<br>
+            DIČ: CZ21020264<br><br>
+            Bankovní spojení: Komerční banka, a.s.<br>
+            Číslo účtu: 131-1380440247/0100<br>
+            IBAN: CZ96 0100 0001 3113 8044 0247<br>
+            SWIFT: KOMBCZPPXXX
+        </div>
+    </div>
+
+    <div id="sub2-2" class="sub-modal">
+        <div class="sub-modal-content">
+            <span class="sub-close" onclick="closeSubModal('sub2-2')">×</span>
+            <h2>Korespondenční adresa</h2>
+            <strong>Elektroenergetické datové centrum, a.s.</strong><br>
+            Dock In One<br>
+            Voctářova 2449/5<br>
+            180 00 Praha 8 - Libeň
+        </div>
+    </div>
+
+    <div id="sub2-3" class="sub-modal">
+        <div class="sub-modal-content">
+            <span class="sub-close" onclick="closeSubModal('sub2-3')">×</span>
+            <h2>Sídlo společnosti</h2>
+            <strong>Elektroenergetické datové centrum, a.s.</strong><br>
+            Na Hroudě 1492/4<br>
+            100 00 Praha 10 – Vršovice<br><br>
+            Zapsáno v OR vedeném Městským soudem v Praze,<br>
+            oddíl B, vložka 28495
+        </div>
+    </div>
+
+    <div id="sub2-4" class="sub-modal">
+        <div class="sub-modal-content">
+            <span class="sub-close" onclick="closeSubModal('sub2-4')">×</span>
+            <h2>Call centrum EDC</h2>
+            <strong>PO – PÁ: 8:00 – 16:00</strong><br><br>
+            <strong>Volání z ČR:</strong> 800 720 204 <small>(zdarma)</small><br>
+            <strong>Ze zahraničí:</strong> +420 519 799 300<br><br>
+            <strong>E-mail:</strong> <a href="mailto:info@edc-cr.cz">info@edc-cr.cz</a>
+        </div>
+    </div>
+
+    <div id="sub2-5" class="sub-modal">
+        <div class="sub-modal-content">
+            <span class="sub-close" onclick="closeSubModal('sub2-5')">×</span>
+            <h2>YouTube kanál EDC</h2>
+            <p style="text-align:center;margin-top:1.5rem;">
+                <a href="https://www.youtube.com/@EDC-CR" target="_blank" rel="noopener"
+                   style="display:inline-flex;align-items:center;gap:10px;color:#0a3d3d;font-weight:600;font-size:1.1rem;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="#ff0000">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 0 6.502C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.75 15.538l0-7.076 6.45 3.538-6.45 3.538z"/>
+                    </svg>
+                    YouTube kanál EDC
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <!-- ====================== JEDEN CENTRÁLNÍ SKRIPT ====================== -->
+    <script>
+        // ====================== GLOBÁLNÍ FUNKCE ======================
+        window.openModal = function(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.style.display = 'flex';
+                document.body.classList.add('modal-open');
+                setTimeout(() => modal.scrollTop = 0, 100);
+            }
+        };
+
+        window.closeModal = function(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.classList.remove('modal-open');
+            }
+
+            // Zavře všechny otevřené sub-modály
+            document.querySelectorAll('.sub-modal').forEach(sub => {
+                if (sub.style.display === 'flex' || sub.style.display === 'block') {
+                    sub.style.display = 'none';
+                }
+            });
+        };
+
+        window.openSubModal = function(id) {
+            const modal = document.getElementById(id);
+            if (modal) modal.style.display = 'flex';
+        };
+
+        window.closeSubModal = function(id) {
+            const modal = document.getElementById(id);
+            if (modal) modal.style.display = 'none';
+        };
+
+        // Newsletter
+        window.openNewsletterModal = function() {
+            const modal = document.getElementById('newsletterModal');
+            if (modal) {
+                modal.style.display = 'flex';
+                document.body.classList.add('modal-open');
+            }
+        };
+
+        window.closeNewsletterModal = function() {
+            const modal = document.getElementById('newsletterModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.classList.remove('modal-open');
+            }
+        };
+
+        window.submitNewsletter = async function(e) {
+            e.preventDefault();
+            
+            const emailInput = e.target.querySelector('input[type=email]');
+            const email = emailInput.value.trim();
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            
+            if (!email || !email.includes('@')) {
+                alert('Zadejte platný email, prosím.');
+                return;
+            }
+
+            // Zablokujeme tlačítko proti dvojitému odeslání
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Odesílám...';
+
+            try {
+                const response = await fetch('https://connect.mailerlite.com/api/subscribers', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer VÁŠ_API_TOKEN_ZDE'
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        groups: ["123456"],          // ← vaše Group ID(y) – může být pole
+                        status: "active",
+                        // volitelně: name: "Jan Novák",
+                        // fields: { "company": "Moje firma" }
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    // Úspěch
+                    alert('Děkujeme! Na váš email jsme poslali potvrzovací zprávu.');
+                    closeNewsletterModal();
+                    e.target.reset();
+                } else {
+                    // Chyba (často už existuje)
+                    if (data.errors?.[0]?.message?.includes('already subscribed')) {
+                        alert('Tento email je již přihlášen k odběru.');
+                    } else {
+                        alert('Nastala chyba: ' + (data.message || 'zkuste to později'));
+                    }
+                }
+            } catch (err) {
+                console.error(err);
+                alert('Nepodařilo se připojit k serveru. Zkuste později.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Přihlásit se';
+            }
+        };
+
+        // ====================== NAČÍTÁNÍ OBSAHU ======================
+        window.loadContent = function(path) {
+            console.log('Načítám obsah:', path);
+            fetch(path + '?t=' + Date.now())
+                .then(response => {
+                    if (!response.ok) throw new Error('Soubor nenalezen: ' + path);
+                    return response.text();
+                })
+                .then(html => {
+                    const main = document.getElementById('main-content');
+                    main.innerHTML = html;
+                    initializePageAfterLoad();
+                })
+                .catch(err => {
+                    console.error('Chyba:', err);
+                    document.getElementById('main-content').innerHTML =
+                        '<div class="container"><h2>Obsah se nepodařilo načíst</h2><p>Zkuste obnovit stránku.</p></div>';
+                });
+        };
+
+        function initializePageAfterLoad() {
+            // Řazení aktualit od nejnovější
+            const list = document.querySelector('.aktuality-list');
+            if (list) {
+                const rows = Array.from(list.querySelectorAll('.aktualita-row')).reverse();
+                rows.forEach(row => list.appendChild(row));
+                
+                // PŘIDÁNO: Inicializace filtrování podle kategorie
+                initCategoryFilter();
+            }
+
+            // Obnovení onclick pro stahování PDF
+            document.querySelectorAll('.modal-trigger[onclick*="download"]').forEach(trigger => {
+                const code = trigger.getAttribute('onclick');
+                if (code) trigger.onclick = new Function('event', code);
+            });
+
+            // Obnovení onclick pro otevírání modálů s videi
+            document.querySelectorAll('.modal-trigger[onclick*="openModal"]').forEach(trigger => {
+                const code = trigger.getAttribute('onclick');
+                if (code) trigger.onclick = new Function(code);
+            });
+            // Automatické generování mapy webu
+            if (document.querySelector('.mapa-webu-section')) {
+                generateSiteMap();
+            }
+
+            function generateSiteMap() {
+                const mapDiv = document.getElementById('auto-site-map');
+                if (!mapDiv) return;
+
+                mapDiv.innerHTML = `
+                    <ul class="site-map-tree">
+                        <li>
+                            <span onclick="window.loadContent && window.loadContent('index_content.html')">Domovská stránka</span>
+                            <ul>
+                                <li>
+                                    <span onclick="openModal('modal1')">O společnosti</span>
+                                    <ul>
+                                        <li onclick="window.loadContent && window.loadContent('aktuality_content.html'); closeModal('modal1')">
+                                            Aktuality a tiskové zprávy
+                                        </li>
+                                        <li onclick="window.loadContent && window.loadContent('struktura_spolecnosti_content.html'); closeModal('modal1')">
+                                            Struktury společnosti
+                                        </li>
+                                        <li onclick="window.loadContent && window.loadContent('povinna-sdeleni_content.html'); closeModal('modal1')">
+                                            Povinná sdělení
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span onclick="openModal('modal2')">Kontakty</span>
+                                    <ul>
+                                        <li onclick="openModal('modal2'); setTimeout(() => openSubModal('sub2-1'), 150)">Fakturační údaje</li>
+                                        <li onclick="openModal('modal2'); setTimeout(() => openSubModal('sub2-2'), 150)">Korespondenční adresa</li>
+                                        <li onclick="openModal('modal2'); setTimeout(() => openSubModal('sub2-3'), 150)">Sídlo společnosti</li>
+                                        <li onclick="openModal('modal2'); setTimeout(() => openSubModal('sub2-4'), 150)">Call centrum EDC</li>
+                                        <li onclick="openModal('modal2'); setTimeout(() => openSubModal('sub2-5'), 150)">YouTube kanál EDC</li>
+                                    </ul>
+                                </li>
+                                <li onclick="window.loadContent && window.loadContent('kariera_content.html')">Kariéra</li>
+                                <li onclick="window.loadContent && window.loadContent('interoperabilita_content.html')">Interoperabilita dat</li>
+                                <li>
+                                    <span onclick="openModal('modal5')">M2M komunikace</span>
+                                    <ul>
+                                        <li onclick="window.loadContent && window.loadContent('M2M_sdileni_content.html'); closeModal('modal5')">
+                                            M2M komunikace sdílení, akumulace
+                                        </li>
+                                        <li onclick="window.loadContent && window.loadContent('M2M_semafor_content.html'); closeModal('modal5')">
+                                            M2M komunikace síťový semafor
+                                        </li>
+                                        <li onclick="window.loadContent && window.loadContent('M2M_flexibilita_content.html'); closeModal('modal5')">
+                                            M2M komunikace agregace, technická flexibilita
+                                        </li>
+                                        <li onclick="window.loadContent && window.loadContent('M2M_content.html'); closeModal('modal5')">
+                                            Více informací (hlavní stránka M2M)
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span onclick="openModal('modal6')">Sdílení</span>
+                                    <ul>
+                                        <li onclick="window.loadContent && window.loadContent('sdileni_video_content.html'); closeModal('modal6')">Videomanuály</li>
+                                        <li onclick="window.loadContent && window.loadContent('sdileni_dokumenty_content.html'); closeModal('modal6')">Dokumenty ke stažení</li>
+                                        <li onclick="window.loadContent && window.loadContent('sdileni_FAQ_content.html'); closeModal('modal6')">Sdílení souhrn</li>
+                                        <li onclick="window.location.href =('sdileni_mapa.html'); closeModal('modal6')">Proces sdílení v kostce</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span onclick="openModal('modal7')">Akumulace</span>
+                                    <ul>
+                                        <li onclick="window.loadContent && window.loadContent('akumulace_video_content.html'); closeModal('modal7')">Videomanuály</li>
+                                        <li onclick="window.loadContent && window.loadContent('akumulace_dokumenty_content.html'); closeModal('modal7')">Dokumenty ke stažení</li>
+                                        <li onclick="window.loadContent && window.loadContent('akumulace_FAQ_content.html'); closeModal('modal7')">Akumulace souhrn</li>
+                                        <li onclick="window.loadContent && window.loadContent('akumulace_content.html'); closeModal('modal7')">Více informací</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span onclick="openModal('modal8')">Flexibilita</span>
+                                    <ul>
+                                        <li onclick="window.loadContent && window.loadContent('flexibilita_video_content.html'); closeModal('modal8')">Videomanuály</li>
+                                        <li onclick="window.loadContent && window.loadContent('flexibilita_dokumenty_content.html'); closeModal('modal8')">Dokumenty ke stažení</li>
+                                        <li onclick="window.loadContent && window.loadContent('flexibilita_FAQ_content.html'); closeModal('modal8')">Flexibilita souhrn</li>
+                                        <li onclick="window.loadContent && window.loadContent('flexibilita_content.html'); closeModal('modal8')">Více informací</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span onclick="openModal('modal9')">Síťový semafor</span>
+                                    <ul>
+                                        <li onclick="window.loadContent && window.loadContent('semafor_video_content.html'); closeModal('modal9')">Videomanuály</li>
+                                        <li onclick="window.loadContent && window.loadContent('semafor_dokumenty_content.html'); closeModal('modal9')">Dokumenty ke stažení</li>
+                                        <li onclick="window.loadContent && window.loadContent('semafor_FAQ_content.html'); closeModal('modal9')">Semafor souhrn</li>
+                                        <li onclick="window.location.href =('semafor_mapa.html'); closeModal('modal9')">Proces v kostce</li>
+                                    </ul>
+                                </li>
+                                <li onclick="window.loadContent && window.loadContent('slovnik_content.html')">EDC slovník energetiky</li>
+                                <li onclick="window.loadContent && window.loadContent('FAQ_content.html')">FAQ</li>
+                                <li onclick="window.loadContent && window.loadContent('workshop_content.html')">EDC-informace</li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                `;
+            }
+
+            // Scroll na začátek stránky
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // SPECIFICKÉ SKRIPTY – FAQ STRÁNKA
+            const faqDropdownBtn = document.querySelector('.faq-dropdown-btn');
+            if (faqDropdownBtn) {
+                const faqDropdown = document.querySelector('.faq-dropdown');
+                
+                // Dropdown obsah
+                faqDropdownBtn.addEventListener('click', function (e) {
+                    e.stopPropagation(); // Zabrání okamžitému zavření
+                    faqDropdown.classList.toggle('active');
+                });
+                
+                // Klik na odkaz v obsahu → scroll + highlight + zavření
+                document.querySelectorAll('.faq-dropdown-content a').forEach(function (link) {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const href = this.getAttribute('href');
+                        const targetId = href.substring(1);
+                        const targetElement = document.getElementById(targetId);
+
+                        if (targetElement) {
+                            document.querySelectorAll('.aktualita-row').forEach(row => row.classList.remove('highlight'));
+                            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            targetElement.classList.add('highlight');
+                            faqDropdown.classList.remove('active');
+                            
+                            // Po 3 sekundách odeber highlight
+                            setTimeout(() => {
+                                targetElement.classList.remove('highlight');
+                            }, 3000);
+                        }
+                    });
+                });
+                
+                // Klik mimo dropdown → zavřít
+                document.addEventListener('click', function (e) {
+                    if (faqDropdown.classList.contains('active') && 
+                        !faqDropdown.contains(e.target)) {
+                        faqDropdown.classList.remove('active');
+                    }
+                });
+                
+                // ESC klávesa → zavřít dropdown
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && faqDropdown.classList.contains('active')) {
+                        faqDropdown.classList.remove('active');
+                    }
+                });
+    
+                // Kategorie FAQ
+                (function () {
+                    const categoryWrapper = document.querySelector('.faq-category-select');
+                    if (!categoryWrapper) return;
+
+                    const btnToggle = categoryWrapper.querySelector('.faq-category-btn');
+                    const categoryButtons = categoryWrapper.querySelectorAll('[data-faq-category]');
+                    const rows = document.querySelectorAll('.aktualita-row');
+                    const faqLinks = document.querySelectorAll('.faq-dropdown-content a');
+
+                    btnToggle.addEventListener('click', function () {
+                        categoryWrapper.classList.toggle('active');
+                    });
+
+                    categoryButtons.forEach(function (catBtn) {
+                        catBtn.addEventListener('click', function () {
+                            const selected = this.getAttribute('data-faq-category');
+                            btnToggle.textContent = this.textContent;
+
+                            rows.forEach(function (row) {
+                                const cat = row.getAttribute('data-category') || 'all';
+                                row.style.display = (selected === 'all' || cat === selected) ? '' : 'none';
+                                row.classList.remove('highlight');
+                            });
+
+                            faqLinks.forEach(function (link) {
+                                const linkCat = link.getAttribute('data-category') || 'all';
+                                link.style.display = (selected === 'all' || linkCat === selected) ? 'flex' : 'none';
+                            });
+
+                            categoryWrapper.classList.remove('active');
+                        });
+                    });
+
+                    // Klik mimo → zavřít
+                    document.addEventListener('click', function (e) {
+                        if (!categoryWrapper.contains(e.target)) {
+                            categoryWrapper.classList.remove('active');
+                        }
+                    });
+                })();
+            }
+
+            // SPECIFICKÉ SKRIPTY – SLOVNÍK ENERGETIKY
+            const slovnikSearch = document.getElementById('slovnikSearch');
+            if (slovnikSearch) {
+                // DATA POJMŮ – ukázka (doplň další)
+                const TERMS = [
+                    { letter: 'a', term: 'A', full: 'Ampér', text: 'Základní jednotka elektrického proudu v soustavě SI.' },
+                    { letter: 'a', term: 'AC', full: 'Střídavý proud', text: 'Směr proudu se periodicky mění (klasická zásuvka, kterou máme doma).' },
+                    { letter: 'a', term: 'Agregátor', full: '', text: 'Subjekt, který sdružuje flexibilitu od více výrobců nebo spotřebitelů a nabízí ji na trzích s elektřinou nebo SVR.' },
+                    { letter: 'a', term: 'Agrofotovoltaika', full: '', text: 'Kombinace zemědělství a výroby solární energie na stejném pozemku (panely jsou umístěny nad plodinami).' },
+                    { letter: 'a', term: 'Aktivní zákazník', full: '', text: 'Zákazník, který vyrábí elektřinu pro vlastní spotřebu a může sdílet přebytky v rámci skupiny sdílení (Lex OZE II).' },
+                    { letter: 'a', term: 'Akumulace', full: '', text: 'Ukládání elektřiny do zařízení (např. baterií) pro pozdější využití; zavedeno novelou Lex OZE III pro stabilizaci sítě a integraci OZE.' },
+                    { letter: 'a', term: 'Alokační klíč', full: '', text: 'Pravidlo rozdělení vyrobené elektřiny mezi odběrná místa ve skupině sdílení; může být statický, dynamický nebo hybridní (zaváděno průběžně v Lex OZE II a Lex OZE III).' },
+                    { letter: 'b', term: 'Baseline', full: '', text: 'Referenční (předpokládaná) spotřeba nebo výroba, sloužící k výpočtu poskytnuté flexibility při agregaci.' },              
+                    { letter: 'b', term: 'Baterie (akumulátor)', full: '', text: 'Zařízení pro uchovávání elektrické energie v chemické formě.' },
+                    { letter: 'b', term: 'BOT', full: '', text: 'Banka Operátora trhu' },
+                    { letter: 'b', term: 'BSD', full: '', text: 'Bezpečnostní standard dodávek' },
+                    { letter: 'b', term: 'Biomasa', full: '', text: 'Souhrn látek tvořících těla všech organismů (rostlin i živočichů). V energetice se využívá ke spalování nebo k výrobě plynu.' },
+                    { letter: 'b', term: 'Bioplyn', full: '', text: 'Plyn vznikající anaerobní fermentací biomasy, využívaný jako obnovitelný zdroj energie.' },
+                    { letter: 'b', term: 'Biometan', full: '', text: 'Čištěný bioplyn s kvalitou zemního plynu, vhodný pro injektáž do sítě nebo jako palivo.' },
+                    { letter: 'b', term: 'B2B/B2C trh', full: '', text: 'Obchodní modely pro prodej energií (Business-to-Business pro firmy, Business-to-Consumer pro domácnosti).' },
+                    { letter: 'c', term: 'CC ČNB', full: '', text: 'Clearingové centrum České národní banky' },
+                    { letter: 'c', term: 'CDS', full: '', text: 'Centrum datových služeb Operátora trhu' },
+                    { letter: 'c', term: 'Clearing', full: '', text: 'Vypořádání rozdílu Operátorem trhu mezi spotřebou elektřiny v regionech TDD určenou odečtem v OPM konečných zákazníků, kteří změnili dodavatele, a spotřebou elektřiny určenou pomocí metody TDD.' },
+                    { letter: 'c', term: 'CO', full: 'Oxid uhelnatý', text: 'Vysoce toxický a nebezpečný plyn bez chuti a zápachu vznikající při nedokonalém spalování (do ohniště nebo hořáku proudí málo kyslíku).' },
+                    { letter: 'c', term: 'CO2', full: 'Oxid uhličitý', text: 'Plyn bez chuti a zápachu, nejedovatý, při jeho větším množství hrozí udušení.' },
+                    { letter: 'c', term: 'CS OTE', full: '', text: 'Centrální informační systém Operátora trhu' },
+                    { letter: 'c', term: 'cos φ', full: 'Účiník', text: 'Bezrozměrná veličina vyjadřující poměr činného a zdánlivého výkonu.' },
+                    { letter: 'č', term: 'ČEPS, a.s.', full: 'České energetické přenosové soustavy, a.s.', text: 'Společnost ČEPS, a.s., státní akciová společnost, která vlastní a provozuje přenosovou soustavu v ČR.' },
+                    { letter: 'č', term: 'ČR', full: 'Česká republika', text: 'Česká republika' },
+                    { letter: 'd', term: 'Den D', full: '', text: 'Den dodávky, resp. den realizace uzavřených kontraktů na dodávku elektřiny.' },
+                    { letter: 'd', term: 'Dispečink', full: 'Databáze', text: 'Řídící centrum, které v reálném čase sleduje a ovládá toky energie v síti, aby zajistilo rovnováhu mezi výrobou a spotřebou.' },
+                    { letter: 'd', term: 'Distribuční soustava', text: 'Sítě jednotlivých distributorů (ČEZdi, EG.D a PREdi) na hladině NN a VN.' },
+                    { letter: 'd', term: 'DC', full: 'Stejnosměrný proud', text: 'Proud teče stále jedním směrem (baterie).' },
+                    { letter: 'd', term: 'DB', full: 'Databáze', text: 'Databáze obecně' },
+                    { letter: 'd', term: 'Decentralizace', text: 'Přechod od velkých elektráren k většímu počtu malých zdrojů energie.' },
+                    { letter: 'd', term: 'DPH', full: 'Daň z přidané hodnoty', text: 'Daň z přidané hodnoty (DPH) je nepřímá daň, kterou platí koncový spotřebitel v ceně nakupovaného zboží nebo služeb, zatímco registrovaní podnikatelé ji v průběhu výroby a prodeje odvádějí státu pouze z hodnoty, o kterou produkt v daném kroku sami zhodnotili.' },
+                    { letter: 'd', term: 'DS', full: 'Distribuční soustava', text: 'Distribuční soustava je rozsáhlý systém elektrických vedení, transformoven a rozvoden, který zajišťuje přenos elektrické energie od přenosové soustavy (nebo přímo od výrobců) ke koncovým odběratelům, jako jsou domácnosti a firmy.' },
+                    { letter: 'd', term: 'DT', full: 'Denní trh s elektřinou', text: 'Denní trh s elektřinou je krátkodobý trh, na kterém se obchoduje elektřina na následující den v jednotlivých hodinových nebo blokových produktech.' },
+                    { letter: 'd', term: 'DÚF', full: 'Doplňující údaje pro fakturaci', text: 'Doplňující údaje pro fakturaci (DÚF) jsou specifické technické parametry a identifikační kódy (jako například EAN nebo EIC), které slouží distributorům a dodavatelům energií k přesnému určení odběrného místa a správnému výpočtu plateb za distribuci a související služby na vaší faktuře.' },
+                    { letter: 'd', term: 'Dynamický alokační klíč', full: '', text: 'Typ alokačního klíče, který rozděluje vyrobenou elektřinu podle aktuální spotřeby odběrných míst pro maximální využití (z Lex OZE II).' },
+                    { letter: 'd', term: 'Dynamická cena', full: '', text: 'Cena elektřiny, která se mění každou hodinu podle aktuálního vývoje na energetické burze' },
+                    { letter: 'e', term: 'EAN', full: 'Mezinárodní systém kódování a identifikace', text: 'Zkratka EAN označuje mezinárodní systém kódování a identifikace zboží, služeb a organizací; v energetice se používá jako unikátní identifikátor odběrného místa.' },
+                    { letter: 'e', term: 'EANd', full: 'Mezinárodní systém kódování a identifikace', text: 'EANd (zkratka pro „EAN for delivery“) je registrační číslo předávacího místa, které patří výrobně elektřiny (např. fotovoltaické elektrárně) a ze kterého se elektřina sdílí či odesílá do sítě nebo skupiny sdílení. Je to unikátní 18místný kód, přidělený provozovatelem distribuční soustavy ve smlouvě o připojení – často v reakci na žádost výrobce.' },
+                    { letter: 'e', term: 'EANo', full: 'Mezinárodní systém kódování a identifikace', text: 'EANo („EAN for off-take“), což je registrační číslo odběrného místa, tedy místa, kde elektřinu sdílení přijímá spotřebitel (např. váš dům či byt).' },
+                    { letter: 'e', term: 'EDC', full: 'Elektroenergetické datové centrum', text: 'Elektroenergetické datové centrum; společnost zajišťující sběr dat v energetice, jejich standardizaci a sdílení.' },
+                    { letter: 'e', term: 'EIC', full: 'Energy Identification Code', text: 'Zkratka pro Energy Identification Code, 16místný kód, který slouží k identifikaci odběrného místa plynu.' },
+                    { letter: 'e', term: 'Elektřina', text: 'Tok elektronů vodičem. V energetice ji dělíme na mnoho forem - tepelnou, elektrickou, chemickou, jadernou nebo např. kinetickou.' },
+                    { letter: 'e', term: 'Elektroměr', text: 'Přístroj určený k měření množství elektřiny, která byla dodaná nebo odebraná ze sítě.' },
+                    { letter: 'e', term: 'Elektromobilita', text: 'Obor zabývající se vozidly s elektrickým pohonem, která čerpají energii nejčastěji z obnovitelných zdrojů.' },
+                    { letter: 'e', term: 'Emisní povolenka', text: 'Certifikát, který opravňuje majitele vypustit do atmosféry jednu tunu oxidu uhličitého. Je to nástroj k regulaci znečištění.' },
+                    { letter: 'e', term: 'Energetická náročnost', text: 'Množství energie potřebné k výrobě určitého produktu nebo k provozu budovy. Cílem moderní energetiky je tuto náročnost snižovat.' },
+                    { letter: 'e', term: 'Energetické společenství', full: '', text: 'Právnická osoba umožňující sdílení elektřiny mezi členy (až 1000 odběrných míst), založená podle Lex OZE II' },
+                    { letter: 'e', term: 'ERÚ', full: 'Energetický regulační úřad', text: 'Energetický regulační úřad (ERÚ) je nezávislý státní orgán, který v Česku reguluje ceny v monopolních oblastech energetiky (např. platby za distribuci), uděluje licence k podnikání, dohlíží na férovou hospodářskou soutěž a chrání zájmy spotřebitelů v odvětví elektřiny, plynu a tepla.' },
+                    { letter: 'e', term: 'ES ČR', full: 'Elektrizační soustava České republiky', text: 'Elektrizační soustava České republiky je vzájemně propojený, centrálně řízený soubor zařízení pro výrobu, přenos, transformaci a distribuci elektřiny (včetně systémů měření a regulace), který zajišťuje spolehlivé dodávky energie od elektráren až ke koncovým spotřebitelům v rámci celé země i v napojení na zahraniční sítě.' },
+                    { letter: 'e', term: 'EU', full: 'Evropská unie', text: 'EEvropská unie je unikátní politické a hospodářské společenství 27 evropských států, které sdílejí část své suverenity společným orgánům, aby společně zajišťovaly mír, stabilitu a fungování jednotného vnitřního trhu založeného na volném pohybu osob, zboží, služeb a kapitálu.' },
+                    { letter: 'e', term: 'EZ', full: 'Energetický zákon', text: 'Energetický zákon, zákon č. 458/2000 Sb., o podmínkách podnikání a výkonu státní správy v energetických odvětvích a o změně některých zákonů, ve znění pozdějších předpisů.' },
+                    { letter: 'f', term: 'F', full: 'Farad', text: 'Jednotka elektrické kapacity' },
+                    { letter: 'f', term: 'Fáze', text: 'V elektrotechnice označuje časový posun průběhu střídavého napětí nebo proudu. V běžné zásuvce máme jednu fáze, pro pohon silných motorů se používá třífázová zásuvka. ' },
+                    { letter: 'f', term: 'Flexibilita', full: '', text: 'Schopnost cíleně měnit výrobu nebo spotřebu elektřiny v reakci na potřeby soustavy, často za úplatu; zavedeno Lex OZE III.' },
+                    { letter: 'f', term: 'FZ', full: 'Finanční zajištění', text: 'Finanční zajištění, poskytnuté Subjektem zúčtování Operátorovi trhu k pokrytí finančních závazků plynoucích z působení Subjektu zúčtování na trhu s elektřinou nebo plynem.' },
+                    { letter: 'f', term: 'FVE', full: 'Fotovoltaická elektrárna', text: 'Elektrárna využívající sluneční energii k výrobě elektřiny prostřednictvím fotovoltaických panelů.' },
+                    { letter: 'f', term: 'Fotovoltaický článek', text: 'Základní konstrukční prvek solárního panelu, nejčastěji vyráběný z křemíku.' },
+                    { letter: 'f', term: 'Foton', text: 'Částice světla, která při dopadu na fotovoltaický panel předává svoji energii elektronům, čímž vzniká elektrický proud.' },
+                    { letter: 'f', term: 'Fosilní paliva', text: 'Neobnovitelné zdroje energie vzniklé v dávné geologické minulosti z odumřelých organismů (ropa, zemní plyn, uhlí).' },
+                    { letter: 'f', term: 'Frekvence', text: 'Počet kmitů střídavého proudu za sekundu. V evropské síti je standardní frekvence 50 Hz a její stabilita je klíčová pro bezpečnost sítě.' },
+                    { letter: 'g', term: 'Gama záření', text: 'Vysoce energetické elektromagnetické záření s velmi krátkou vlnovou délkou. Je nejpronikavějším druhem radioaktivního záření a vyžaduje silné stínění (olovo nebo beton).' },
+                    { letter: 'g', term: 'Generátor', text: 'Stroj, který přeměňuje mechanickou energii (např. z turbíny) na energii elektrickou.' },
+                    { letter: 'g', term: 'Geotermální energie', text: 'Využití tepla zemského jádra pro výrobu páry nebo vytápění.' },
+                    { letter: 'g', term: 'Gigajoule', text: 'Jednotka energie, která se v Česku nejčastěji používá pro vyúčtování dodaného tepla z tepláren.' },
+                    { letter: 'g', term: 'Green Deal', text: 'Zelená dohoda, je to soubor politických iniciativ Evropské komise, jejichž hlavním cílem je dosáhnout do roku 2050 klimatické neutrality.' },
+                    { letter: 'g', term: 'Grid', text: 'Elektrická síť, je to anglický výraz pro přenosovou a distribuční soustavu. Dnes se často mluví o Smart grids (chytrých sítích), které dokážou samy regulovat spotřebu a výrobu.' },
+                    { letter: 'g', term: 'GWh', full: 'Gigawatthodina', text: 'Jednotka velmi velkého množství energie, 1 GWh = 1 000 MWh' },
+                    { letter: 'h', term: 'HTTPS', full: 'Hypertext Transfer Protocol Secure', text: 'Zabezpečený internetový protokol' },
+                    { letter: 'h', term: 'HDS', full: 'Hlavní domovní skříň', text: 'Místo, kde se objekt napojuje na distribuční síť, obsahuje hlavní (zpravidla už nožové) pojistky. Někdy též nazývána jako přípojková skříň.' },
+                    { letter: 'h', term: 'HDO', full: 'Hromadné dálkové ovládání', text: 'Systém, kterým distributor pomocí signálů posílaných po síti časově ovládá zapínání a vypínání spotřebičů s velkým odběrem (bojlery, akumulační kamna...) a tím pádem přepíná mezi vysokým a nízkým tarifem. ' },
+                    { letter: 'h', term: 'HJ', full: 'Hlavní jistič', text: 'Ochranný prvek omezující maximální množství proudu, které může odběrné místo spotřebovat. Je součást paušálního poplatku za elektřinu.' },
+                    { letter: 'h', term: 'HW', full: 'Hardware', text: 'Hardware, počítačové zařízení a periferie' },
+                    { letter: 'h', term: 'Hz', full: 'Hertz', text: 'Jednotka frekvence, počet period za sekundu; v síti obvykle 50 Hz' },
+                    { letter: 'h', term: 'Hydroelektrárna', text: 'Vodní elektrárna využívající energii tekoucí nebo padající vody k roztočení turbíny.' },
+                    { letter: 'h', term: 'H', full: 'Henry', text: 'Jednotka elektrické indukčnosti' },
+                    { letter: 'ch', term: 'Chladicí věž', text: 'Dominanta velkých elektráren sloužící k ochlazování oteplené vody z kondenzátoru pomocí proudícího vzduchu. To, co z nich vidíme stoupat, je čistá vodní pára.' },
+                    { letter: 'ch', term: 'Chladicí okruh', text: 'Uzavřený nebo otevřený systém potrubí, čerpadel a výměníků, kterým protéká médium odvádějící odpadní teplo z procesu - např. z jaderného reaktoru nebo spalovacího motoru.' },
+                    { letter: 'ch', term: 'Chladivo reaktoru', text: 'Médium (voda, plyn, tekutý kov) protékající aktivní zónou jaderného reaktoru, odebírá teplo vznikající štěpením a přenáší ho k výrobě páry.' },
+                    { letter: 'ch', term: 'Chránič', text: 'Proudový chránič je velmi citlivý bezpečnostní prvek v elektroinstalaci, který odpojí obvod, pokud zjistí, že proud uniká mimo daný obvod - např. přes tělo člověka do země.' },
+                    { letter: 'ch', term: 'Charakteristika', text: 'Zatěžovací charakteristika - závislost napětí nebo výkonu zdroje na velikosti odebíraného proudu. Je klíčová pro stabilitu sítě.' },
+                    { letter: 'i', term: 'IČO', full: 'Identifikační číslo organizace', text: 'Identifikační číslo organizace' },
+                    { letter: 'i', term: 'Impedance', text: 'Celkový zdánlivý odpor elektrického obvodu proti průtoku střídavého proudu. Skládá se z resistance (odporu) a reaktance (indukční a kapacitní složky).' },
+                    { letter: 'i', term: 'Indukce', text: 'Jev, při kterém v měnícím se magnetickém poli vzniká ve vodiči elektrické napětí. Na tomto principu fungují všechny generátory a transformátory.' },
+                    { letter: 'i', term: 'IDA', full: 'Intraday aukce', text: 'Vnitrodenní aukce, součást vnitrodenního obchodování s elektřinou.' },
+                    { letter: 'i', term: 'Invertor', text: 'Jiným slovem střídač, je to klíčové zařízení ve fotovoltaických elektrárnách měnící stejnosměrný proud (DC) na střídavý proud (AC) o frekvenci 50 Hz pro domácí spotřebiče nebo síť.' },
+                    { letter: 'i', term: 'IV', full: 'Instalovaný výkon', text: 'Součet jmenovitých výkonů všech energetických zdrojů (např. všech fotovoltaických panelů nebo generátorů v elektrárně) v daném systému. Udává se zpravidla v kWp = Kilo-Watt-peak.' },
+                    { letter: 'i', term: 'ID', full: 'Identifikátor', text: 'Identifikátor obecně' },
+                    { letter: 'i', term: 'IS', full: 'Informační systém', text: 'Informační systém obecně' },
+                    { letter: 'i', term: 'Inteligentní měření', text: 'Jinými slovy Smart metering = moderní elektroměry, které umožňují dálkový odečet v jednotlivých čtvrthodinových intervalech, dokáží sledovat spotřebu i výrobu v reálném čase.' },
+                    { letter: 'i', term: 'ISO 27001', full: 'Mezinárodní standard řízení bezpečnosti informací', text: 'Mezinárodní standard upravující systém řízení bezpečnosti informací.' },
+                    { letter: 'j', term: 'J, MJ, GJ, TJ', full: 'Joule, Megajoule, Gigajoule, Terajoule', text: 'Jednotka práce (energie) 1 TJ = 10¹² J 1 TJ = 10³ GJ 1 TJ = 10⁶ MJ 1 J = 1 Ws' },
+                    { letter: 'j', term: 'Jádro', text: 'Atomové jádro je centrální část atomu složená z protonů a neutronů. V energetice využíváme energii, která drží tyto částice pohromadě a štěpíme je.' },
+                    { letter: 'j', term: 'Jaderná elektrárna', text: 'Je zařízení, které vyrábí elektřinu pomocí tepla uvolněného při řízené řetězové štěpné reakci v reaktoru.' },
+                    { letter: 'j', term: 'Jaderné palivo',text: 'Materiál (nejčastěji uran, konkrétně ve formě oxidu uraničitého v tabletách), který je vložen do reaktoru za účelem výroby energie.' },
+                    { letter: 'j', term: 'Jaderný dozor', text: 'Státní úřad pro jadernou bezpečnost je orgán, který v Česku dohlíží na provoz jaderných zařízení.' },
+                    { letter: 'j', term: 'Jalový výkon', text: 'Jalový výkon je výkon, který se v elektrických obvodech střídavého proudu přelévá mezi zdrojem a spotřebičem, ale nekoná užitečnou práci. Zatěžuje však vedení a stroje.' },
+                    { letter: 'j', term: 'Jednofázová soustava', text: 'Systém střídavého proudu využívající dva vodiče (fázový a nulový). Běžně se používá pro méně náročné spotřebiče v domácnostech.' },
+                    { letter: 'j', term: 'Jednotková cena', text: 'Cena za jednu kilowatthodinu (kWh) nebo megawatthodinu (MWh) energie, která se skládá z obchodní a distribuční části.' },
+                    { letter: 'j', term: 'Jistič', text: 'Automatický vypínač, který přeruší elektrický obvod, pokud jím začne téct příliš velký proud (při přetížení nebo zkratu). Chrání vedení před požárem a zničením.' },
+                    { letter: 'j', term: 'Jmenovité napětí', text: 'Hodnota napětí, pro kterou je dané zařízení nebo síť konstruována a pojmenována, např. 230 V v zásuvce.' },
+                    { letter: 'k', term: 'Kabel', text: 'Izolovaný vodič nebo skupina vodičů sloužící k přenosu elektrické energie.' },
+                    { letter: 'k', term: 'Kazeta', full: 'Palivová kazeta', text: 'Souobor palivových proutků s jaderným palivem, který se jako jeden celek vkládá do reaktoru.' },
+                    { letter: 'k', term: 'Kogenerace', text: 'Společná výroba elektřiny a tepla. Místo toho, aby se teplo z výroby elektřiny vypustilo do ovzduší (jako u běžných elektráren), využije se k vytápění.' },
+                    { letter: 'k', term: 'Kondenzátor', text: 'V tepelné energetice je to výměník tepla, ve kterém se pára po průchodu turbínou mění zpět na vodu. V elektrotechnice je to součástka schopná uchovat elektrický náboj v elektrickém poli.' },
+                    { letter: 'k', term: 'Konečný zákazník, KZ', full: '', text: 'Odběratel, který používá dodanou energii pouze pro svoji spotřebu, nikoliv pro další prodej' },
+                    { letter: 'k', term: 'kV', full: 'Kilovolt', text: 'Jednotka vyššího elektrického napětí, 1 kV = 1 000 V' },
+                    { letter: 'k', term: 'kW', full: 'Kilowatt', text: 'Jednotka činného výkonu, 1 kW = 1 000 W' },
+                    { letter: 'k', term: 'kWh', full: 'Kilowatthodina', text: 'Běžná fakturační jednotka elektrické energie, 1 kWh = 1 000 Wh' },
+                    { letter: 'k', term: 'kVA', full: 'Kilovoltampér', text: 'Jednotka zdánlivého výkonu, 1 kVA = 1 000 VA' },
+                    { letter: 'k', term: 'kVAr', full: 'Kilovoltampér reaktanční', text: 'Jednotka jalového výkonu, 1 kVAr = 1 000 VAr' },
+                    { letter: 'k', term: 'kA', full: 'Kiloampér', text: 'Jednotka velkého elektrického proudu, 1 kA = 1 000 A' },
+                    { letter: 'k', term: 'KVET', full: 'Kombinovaná výroba elektřiny a tepla', text: 'Kombinovaná výroba elektřiny a tepla (kogenerace), vysoce účinná výroba elektřiny a tepla v jednom procesu.' },
+                    { letter: 'l', term: 'LED', full: 'Light Emitting Diode', text: 'Je to polovodičová součástka, která přeměňuje elektrický proud přímo na světlo s vysokou účinností. Oproti klasickým žárovkám spotřebuje až o 90% méně energie.' },
+                    { letter: 'l', term: 'L1, L2, L3', text: 'Označení jednotlivých fází v třífázové elektrické soustavě. Na chytrých elektroměrech tyto fáze vidíme i na displeji.' },
+                    { letter: 'l', term: 'LEX OZE I', text: 'Hlavním cílem bylo odstranit byrokratické bariéry pro malé instalace. Do 50 kW (původně do 10 kW) již není potřeba licence. Dále posunulo stavby nad 1 MW do oblasti stavby ve veřejném zájmu, což urychluje povolovací procesy.' },
+                    { letter: 'l', term: 'LEX OZE II', text: 'Tato novela přinesla možnost sdílení elektřiny a vznik Elektroenergetického datového centra, které výměnu dat o sdílení eviduje a přepočítává.' },
+                    { letter: 'l', term: 'LEX OZE III', text: 'Hlavními tématy jsou akumulace, agregace a flexibilita. Nastanou jasná pravidla pro provoz velkých bateriových úložišť, bude možné sdružovat menší zdroje a nabízet jejich výkon nebo akumulaci ve chvíli, kdy to bude potřeba.' },
+                    { letter: 'l', term: 'LDS', full: 'Lokální distribuční soustava', text: 'Lokální distribuční soustava, distribuční síť nepřipojená k přenosové soustavě.' },
+                    { letter: 'l', term: 'Lumen', text: 'Jednotka světelného toku, která uvává, kolik světla celkem vyzáří světelný zdroj do všech směrů. Dnes je důležitějším údajem než watty.' },
+                    { letter: 'm', term: 'Magnetické pole', text: 'Silové pole vznikající kolem vodičů s proudem a v generátorech. Je nezbytné pro přeměnu mechanické energie na elektrickou.' },
+                    { letter: 'm', term: 'Meziokruh', text: 'Druhý uzavřený okruh v jaderné elektrárně (sekundární). Vyrábí se v něm pára pro turbínu a odděluje radioaktivní vodu z reaktoru od turbíny.' },
+                    { letter: 'm', term: 'Měřicí transformátor', text: 'Speciální zařízení, které snižuje vysoké napětí nebo proudy na úrovně, které jsou pro měřicí přístroje a elektroměry bezpečné.' },
+                    { letter: 'm', term: 'Mikrosíť', text: 'Lokální energetický systém (např. v rámci obce nebo areálu), který dokáže fungovat nezávisle na hlavní celostátní síti díky vlastním zdrojům a bateriím.' },
+                    { letter: 'm', term: 'Modul', text: 'Fotovoltaický modul je odborný název pro solární panel, který se skládá z propojených solárních článků.' },
+                    { letter: 'm', term: 'Moderátor', text: 'V energetice je to látka, která zpomaluje rychlé neutrony vznikající při štěpení na tzv. tepelné neutrony, které snadněji vyvolají další štěpení. Nejčastěji se používá voda, těžká voda nebo grafit.' },               
+                    { letter: 'm', term: 'MPO', full: 'Ministerstvo průmyslu a obchodu', text: 'Ministerstvo průmyslu a obchodu' },
+                    { letter: 'm', term: 'MV', full: 'Megavolt', text: 'Jednotka velmi vysokého elektrického napětí, 1 MV = 1 000 kV' },
+                    { letter: 'm', term: 'MW', full: 'Megawatt', text: 'Jednotka velkého činného výkonu, 1 MW = 1 000 kW' },
+                    { letter: 'm', term: 'MWh', full: 'Megawatthodina', text: 'Jednotka velkého množství energie, 1 MWh = 1 000 kWh' },
+                    { letter: 'm', term: 'MVA', full: 'Megavoltampér', text: 'Jednotka velkého zdánlivého výkonu, 1 MVA = 1 000 kVA' },
+                    { letter: 'm', term: 'MVAr', full: 'Megavoltampér reaktanční', text: 'Jednotka velkého jalového výkonu, 1 MVAr = 1 000 kVAr' },
+                    { letter: 'n', term: 'Napětí', text: 'Elektrické napětí je rozdíl elektrických potenciálů mezi dvěma body. Lze si ho představit jako tlak, který žene elektrony vodičem. Jednotkou je Volt (V).' },
+                    { letter: 'n', term: 'Neutron', text: 'Elektricky neutrální částice v jádře atomu. V energetice jsou klíčové tzv. tepelné neutrony, které způsobují štěpení jader uranu.' },
+                    { letter: 'n', term: 'Nízké napětí', text: 'V Česku se jedná o napětí do 1000V. Patří sem běžné rozvody v domácnostech (230 V a 400V).' },
+                    { letter: 'n', term: 'Nízký tarif', text: 'Časové pásmo rozložené do několika různě dlouhých časových úseků během každého dne. Cena elektřiny je během této doby nižší. Ovládá se systémem HDO a dříve se mu říkalo "noční proud".' },
+                    { letter: 'n', term: 'Nulový vodič', text: 'Pracovní vodič v elektrické síti, který slouží k uzavření obvodu. Má modrou barvu izolace.' },
+                    { letter: 'n', term: 'Nominální výkon', text: 'Jmenovitý výkon zařízení stanovený výrobcem pro trvalý provoz za standardních podmínek.' },
+                    { letter: 'n', term: 'NET4GAS, s.r.o.', full: 'NET4GAS, s.r.o.', text: 'Provozovatel přepravní soustavy plynu v České republice.' },
+                    { letter: 'n', term: 'NOx', full: 'Oxidy dusíku', text: 'Oxidy dusíku' },
+                    { letter: 'n', term: 'NPpS', full: 'Náklady na podpůrné služby', text: 'Průměrné hodinové hodnoty nákladů na aktivované PpS (regulační energie).' },
+                    { letter: 'o', term: 'Obchodník s elektřinou', full: '', text: 'Fyzická či právnická osoba, která je držitelem licence na obchod s elektřinou a nakupuje elektřinu za účelem jejího dalšího prodeje.' },
+                    { letter: 'o', term: 'Obchodník s plynem', full: '', text: 'Fyzická či právnická osoba, která je držitelem licence na obchod s plynem a nakupuje plyn za účelem jeho dalšího prodeje.' },
+                    { letter: 'o', term: 'Obchodní flexibilita', text: 'Schopnost účastníků trhu reagovat na změny cen, výroby a spotřeby. Přináší úsporu nákladů, stabilitu sítě a lepší integraci OZE.' },
+                    { letter: 'o', term: 'Odpor', text: 'Neboli rezistance je vlastnost materiálu bránit průtoku elektrického proudu. Při překonávání odporu vzniká teplo.' },
+                    { letter: 'o', term: 'Ochrana', text: 'Zařízení, která chrání síť a spotřebiče před účinky zkratů a přetížení (jističe, pojistky, relé...).' },
+                    { letter: 'o', term: 'Off-grid', text: 'Systém ostrovního provozu bez připojení k distribuční síti.' },
+                    { letter: 'o', term: 'OPE', full: 'Obchodní podmínky OTE pro elektroenergetiku', text: 'Obchodní podmínky OTE, a.s., pro elektroenergetiku; dostupné na webových stránkách OTE.' },
+                    { letter: 'o', term: 'OPM', full: 'Odběrné/předávací místo', text: 'Odběrné / předávací místo' },
+                    { letter: 'o', term: 'Ostrovní provoz', text: 'Režim, kdy budova nebo celá oblast funguje úplně nezávisle na veřejné distribuční síti a není k ní připojena, např. pomocí vlastních panelů a baterií.' },
+                    { letter: 'o', term: 'OPP', full: 'Obchodní podmínky OTE pro plynárenství', text: 'Obchodní podmínky OTE, a.s., pro plynárenství; dostupné na webových stránkách OTE.' },
+                    { letter: 'o', term: 'OTE, Operátor trhu', full: 'Operátor trhu s elektřinou a plynem, a.s.', text: 'Akciová společnost OTE, a.s., která působí na trhu s elektřinou v ČR od roku 2001 a na trhu s plynem od roku 2010, jejímž zakladatelem a jediným akcionářem je stát Česká republika. Výkon akcionářských práv provádí z pověření státu Ministerstvo průmyslu a obchodu.' },
+                    { letter: 'o', term: 'OZE', full: 'Obnovitelné zdroje energie', text: 'Obnovitelné zdroje energie; podle zákona o životním prostředí: přírodní zdroje, které mají schopnost se při postupném spotřebovávání částečně nebo úplně obnovovat, a to samy nebo za přispění člověka; podle zákona o podpoře využívání obnovitelných zdroj: energie větru, energie slunečního záření, geotermální energie, energie vody, energie půdy, energie vzduchu, energie biomasy, energie skládkového plynu, energie kalového plynu a energie bioplynu.' },
+                    { letter: 'o', term: 'Ω', full: 'Ohm', text: 'Jednotka elektrického odporu. Základní vztah elektrotechniky, který říká, že proud v obvodu je přímo úměrný napětí a nepřímo úměrný odporu (I = U / R).' },
+                    { letter: 'p', term: 'Palivový článek', text: 'Zařízení, které mění chemickou energii paliva přímo na elektřinu a teplo bez spalování.' },
+                    { letter: 'p', term: 'Palivový proutek', text: 'Kovová trubice naplněná tabletami oxidu uraničitého. Stovky takových proutků tvoří jednu palivovou kazetu.' },
+                    { letter: 'p', term: 'Paralelní zapojení', text: 'Zapojení součástek, např. FVE panelů, vedle sebe (rozbočení).' },
+                    { letter: 'p', term: 'Parogenerátor', text: 'Obří výměník tepla v jaderné elektrárně, kde horká voda z reaktoru ohřívá vodu v sekundárním okruhu a vyrábí páru pro turbínu.' },
+                    { letter: 'p', term: 'Proud', text: 'Usměrněný pohyb elektronů, jednotkou je Ampér (A).' },
+                    { letter: 'p', term: 'Potenciál', text: 'Schopnost elektrického pole konat práci. Rozdíl potenciálů mezi dvěma body je napětí.' },                 
+                    { letter: 'p', term: 'Primární okruh', text: 'Uzavřený okruh vody, která protéká přímo jaderným reaktorem, ohřívá se a v parogenerátoru předává teplo sekundárnímu okruhu.' },
+                    { letter: 'p', term: 'PC', full: 'Parametrická cena', text: 'Parametrická cena, vyjadřuje očekávanou jednotkovou ceny odchylky.' },
+                    { letter: 'p', term: 'PDS', full: 'Provozovatel distribuční soustavy', text: 'Provozovatel distribuční soustavy' },
+                    { letter: 'p', term: 'PLDS', full: 'Provozovatel lokální distribuční soustavy', text: 'Provozovatel lokální distribuční soustavy' },
+                    { letter: 'p', term: 'PKI', full: 'Public Key Infrastructure', text: 'Technologie elektronického podpisu a šifrování (Public Key Infrastructure).' },
+                    { letter: 'p', term: 'Podpůrné služby', full: '', text: 'Činnosti fyzických nebo právnických osob k zajištění systémových služeb.' },
+                    { letter: 'p', term: 'POF', full: 'Podklady pro fakturaci', text: 'Podklady pro fakturaci' },
+                    { letter: 'p', term: 'POZE', full: 'Podporované zdroje energie', text: 'Podporované zdroje energie; systém podpory výroby energie z obnovitelných a druhotných zdrojů a na výrobu elektřiny z decentrálních zdrojů a z vysoce účinné kombinované výroby.' },
+                    { letter: 'p', term: 'PPS', full: 'Provozovatel přenosové soustavy', text: 'Provozovatel přenosové soustavy' },
+                    { letter: 'p', term: 'PpS', full: 'Podpůrné služby', text: 'Podpůrné služby (regulační energie)' },
+                    { letter: 'p', term: 'Přečerpávací vodní elektrárna', text: 'Elektrárna tvořena dvěma nádržemi v různé výšce. V době nadbytku elektřiny v síti čerpá vodu nahoru, v době nedostatku ji pouští přes turbíny dolů. V Česku je asi nejznámější elektrárna Dlouhé stráně na Jesenicku.' },
+                    { letter: 'p', term: 'Přenosová soustava', text: 'Jedná se o páteřní síť v ČR provozovanou společností ČEPS, a.s.' },
+                    { letter: 'p', term: 'Přepěťová ochrana', text: 'Chrání elektroniku před špičkami v síti.' },
+                    { letter: 'p', term: 'Příkon', text: 'Množství energie, které spotřebič odebere ze sítě za jednotku času. Udává se ve wattech (W). Rozdíl mezi příkonem a výkonem definuje účinnost zařízení.' },
+                    { letter: 'p', term: 'Přípojková skříň', text: 'Místo, kde se objekt napojuje na distribuční síť, obsahuje hlavní (zpravidla už nožové) pojistky. Někdy též nazývána jako HDS - hlavní domovní skříň.' },
+                    { letter: 'p', term: 'PVE', full: 'Přečerpávací vodní elektrárna', text: 'Vodní elektrárna s akumulací energie přečerpáváním vody do vyšší nádrže' },
+                    { letter: 'r', term: 'Reaktor', text: 'Jaderný reaktor je zařízení, ve kterém probíhá řízená štěpná řetězová reakce. Slouží k uvolňování tepelné energie z jaderného paliva.' },
+                    { letter: 'r', term: 'Relé', text: 'Spínací prvek, který reaguje na změnu fyzikální veličiny (proud, napětí, teplota) a ovládá další obvody. V energetice slouží také k ochraně zařízení před poruchami.' },
+                    { letter: 'r', term: 'Regulace frekvence', text: 'Proces udržování stabilních 50 Hz v síti vyrovnáváním výroby a spotřeby v reálném čase.' },
+                    { letter: 'r', term: 'Regulátor napětí', text: 'Zařízení, které udržuje výstupní napětí zdroje na konstantní úrovni bez ohledu na zatížení.' },
+                    { letter: 'r', term: 'Rekuperace', text: 'Proces, při kterém se část energie (např. kinetická energie brzdícího vlaku nebo teplo z ventilačního vzduchu) vrací zpět do systému k dalšímu využití.' },
+                    { letter: 'r', term: 'Renewables', text: 'Anglický výraz pro obnovitelné zdroje energie (OZE).' },
+                    { letter: 'r', term: 'Rezervovaný výkon', text: 'Maximální výkon, který může výrobce elektřiny poslat z výrobny do sítě. Sjednává se s distributorem a je pevně ukotvený ve smlouvě o připojení. Za jeho překročení hrozí ze strany distributora pokuty.' },
+                    { letter: 'r', term: 'Rezervovaný příkon', text: 'Hodnota hlavního jističe, kterou má zákazník pevně sjednanou s distributorem. Udává se v počtu fází a Ampérech, např. 1x20A nebo 3x25A.' },
+                    { letter: 'r', term: 'Rezistance', text: 'Činný elektrický odpor vodiče, ve kterém se elektrická energie mění na teplo.' },
+                    { letter: 'r', term: 'Rozvodna', text: 'Uzel v elektrické síti, kde se elektřina dělí do různých směrů, měří se a jistí. Často je spojena s transformovnou.' },
+                    { letter: 'r', term: 'Řetězová reakce', text: 'Proces, při kterém neutrony vzniklé štěpením jednoho jádra vyvolávají štěpení dalších jader. V energetice musí být tato reakce přísně řízená.' },
+                    { letter: 'r', term: 'Řídící tyče', text: 'Pohyblivé prvky v reaktoru obsahující pohlcovače neutronů (např. bór nebo kadmium). Jejich zasouváním nebo vysouváním se reguluje výkon reaktoru.' },
+                    { letter: 's', term: 'S', full: 'Siemens', text: 'Jednotka elektrické vodivosti, převrácená hodnota ohmu.' },
+                    { letter: 's', term: 'SCADA', full: 'Supervisory Control and Data Acquisition', text: 'Systém dispečerského řízení a sběru dat pro monitorování a ovládání technických procesů v energetice.' },
+                    { letter: 's', term: 'Sdílení elektřiny', full: '', text: 'Možnost sdílet vyrobenou elektřinu mezi členy skupiny sdílení nebo energetického společenství, zavedená novelou energetického zákona (Lex OZE II).' },
+                    { letter: 's', term: 'Sériové zapojení', text: 'Zapojení součástek, např. FVE panelů, v řadě za sebou.' },
+                    { letter: 's', term: 'Smart Grid', full: 'Chytrá síť', text: 'Pokročilá elektrická síť, která využívá digitální technologie k oboustranné komunikaci mezi výrobcem a spotřebitelem, čímž optimalizuje provoz a spotřebu. ' },
+                    { letter: 's', term: 'Smart meter', full: 'Chytrý elektroměr', text: 'Digitální měřič, který v reálném čase zaznamenává spotřebu elektřiny a odesílá data distributorovi, což umožňuje například využívání dynamických tarifů.' },
+                    { letter: 's', term: 'Solární panel', text: 'Zařízení, které přeměňuje sluneční záření přímo na stejnosměrný elektrický proud pomocí fotoelektrického jevu.' },
+                    { letter: 's', term: 'Společenství pro obnovitelné zdroje', text: 'Specifický typ společenství zaměřený výhradně na zelenou energii s přísnějšími pravidly pro členství, nesmí být vytvořené za účelem zisku.' },
+                    { letter: 's', term: 'Spotová cena', text: 'Aktuální tržní cena elektřiny na burze.' },
+                    { letter: 's', term: 'Statický alokační klíč', full: '', text: 'Typ alokačního klíče s pevně stanoveným procentuálním rozdělením vyrobené elektřiny bez ohledu na aktuální spotřebu (základní varianta z Lex OZE II).' },
+                    { letter: 's', term: 'Střídač', text: 'Neboli invertor je klíčové zařízení, které mění stejnosměrný proud (například z fotovoltaických panelů) na střídavý, který používáme v běžných zásuvkách.' },
+                    { letter: 's', term: 'Svorkovnice', text: 'Místo pro spojení více vodičů.' },
+                    { letter: 's', term: 'SVR', full: 'Služby výkonové rovnováhy', text: 'Služby zajišťující rovnováhu mezi výrobou a spotřebou elektřiny v elektrizační soustavě, poskytované ČEPS.' },
+                    { letter: 't', term: 'Tarif', text: 'Vysoký nebo nízký, v nízkém tarifu jsou nižší ceny obchodníka i distributora. Dříve známý jako "noční proud", přepínání mezi vysokým a nízkým tarifem funguje pomocí HDO.' },
+                    { letter: 't', term: 'Tepelné čerpadlo', text: 'Zařízení, které odčerpává teplo z okolí (země, voda, vzduch) a pomocí elektrické práce ho převádí na vyšší teplotní hladinu pro vytápění.' },
+                    { letter: 't', term: 'Tepelná elektrárna', text: 'Zařízení vyrábějící elektřinu přeměnou tepelné energie získané spalováním paliva na mechanickou a následně elektrickou.' },
+                    { letter: 't', term: 'Technická flexibilita', text: 'Schopnost technologií a zařízení rychle měnit výkon nebo spotřebu. Je klíčová pro stabilitu sítě. ' },
+                    { letter: 't', term: 'Transformátor', text: 'Přístroj umožňující měnit napětí, aby se minimalizovaly ztráty v kabelech.' },
+                    { letter: 't', term: 'Transformovna', text: 'Objekt v přenosové soustavě osazený transformátory, kde se mění napěťová hladina.' },
+                    { letter: 't', term: 'Třífázová soustava', text: 'Systém tří střídavých proudů posunutých o 120°.' },
+                    { letter: 't', term: 'Turbína', text: 'Točivý stroj, který přeměňuje kinetickou nebo tepelnou energii proudící látky (voda, pára, vzduch) na mechanickou energii hřídele.' },
+                    { letter: 'u', term: 'Uran', text: 'Těžký kov, jehož izotop 235U je základním palivem pro jaderné elektrárny díky své schopnosti udržet štěpnou řetězovou reakci.' },
+                    { letter: 'u', term: 'Ukládání energie', text: 'Proces uchování přebytečné energie pro pozdější využití, např. v bateriích nebo přečerpávacích vodních elektrárnách.' },
+                    { letter: 'u', term: 'Uzemnění', text: 'Vodivé spojení elektrického obvodu nebo zařízení se zemí pro zajištění ochrany před úrazem elektrickým proudem a správnou funkci ochran.' },
+                    { letter: 'u', term: 'Usměrňovač', text: 'Elektrotechnické zařízení, např. diodový můstek, který mění střídavý proud na stejnosměrný.' },
+                    { letter: 'u', term: 'Uhlíková stopa', text: 'Množství emisí skleníkových plynů, které vznikne při výrobě energie nebo provozu zařízení po celou dobu jeho životnosti.' },
+                    { letter: 'u', term: 'Udržitelnost', text: 'Schopnost energetického systému fungovat dlouhodobě bez vyčerpání přírodních zdrojů a bez nevratného poškození životního prostředí.' },
+                    { letter: 'ú', term: 'Úložiště energie', full: '', text: 'Zařízení pro akumulaci elektřiny (např. bateriová úložiště); samostatná úložiště podporována od října 2025 díky Lex OZE III.' },
+                    { letter: 'v', term: 'Vodní elektrárna', text: 'Energetické dílo využívající energii proudící nebo padající vody pohonu turbíny.' },
+                    { letter: 'v', term: 'Větrná elektrárna', text: 'Elektrárna využívající energii větru k roztočení rotoru, jenž následně přes generátor vyrobí elektřinu.' },
+                    { letter: 'v', term: 'Vysoké napětí', text: 'Napěťová hladina (v ČR od 1 kV do 52 kV), která slouží k distribuci elektřiny na střední vzdálenosti.' },
+                    { letter: 'v', term: 'Výměník tepla', text: 'Zařízení, ve kterém dochází k předávání tepelné energie mezi dvěma médii (např. voda-voda, spaliny-voda), aniž by se tato média promíchala.' },
+                    { letter: 'v', term: 'Vlastní spotřeba', text: 'Množství energie, kterou elektrárna sama spotřebuje na svůj provoz (čerpadla, řízení, osvětlení...) než pošle zbytek do sítě.' },
+                    { letter: 'v', term: 'Virtuální baterie', text: 'Služba dodavatele, který si "uloží" přebytky z výrobny do sítě a později je vrátí (obvykle pouze za poplatek za distribuci).' },
+                    { letter: 'v', term: 'V2G', full: 'Vehicle-to-grid', text: 'Využití baterie auta pro napájení sítě, něco jako "zpětný chod".' },
+                    { letter: 'v', term: 'V', full: 'Volt', text: 'Jednotka elektrického napětí' },
+                    { letter: 'v', term: 'VA', full: 'Voltampér', text: 'Jednotka zdánlivého výkonu v AC soustavách' },
+                    { letter: 'v', term: 'Var', full: 'Voltampér reaktanční', text: 'Jednotka jalového výkonu v AC soustavách' },
+                    { letter: 'v', term: 'VVN', full: 'Velmi vysoké napětí', text: 'Používá se k distribuci elektřiny na větší vzdálenosti v rozsahu 52 - 300 kV.' },
+                    { letter: 'w', term: 'W', full: 'Watt', text: 'Jednotka činného elektrického výkonu' },
+                    { letter: 'w', term: 'Wh', full: 'Watthodina', text: 'Jednotka elektrické energie odpovídající výkonu 1 W po dobu 1 hodiny.' }, 
+                    { letter: 'w', term: 'Wallbox', text: 'Domácí nabíječka pro elektromobily.' },
+                    { letter: 'w', term: 'Wattmetr', text: 'Přístroj určený k přímému měření činného elektrického výkonu v obvodech stejnosměrného i střídavého proudu.' },
+                    { letter: 'w', term: 'Wattpeak', text: 'Jednotka jmenovitého špičkového výkonu udávající, kolik energie panel vyrobí v ideálních podmínkách.' },
+                    { letter: 'z', term: 'Zatížení sítě', text: 'Okamžitý odběr elektřiny všemi spotřebiči připojenými v síti. Energetici musí neustále hlídat, aby výroba přesně odpovídala tomuto zatížení.' },
+                    { letter: 'z', term: 'Záložní zdroj', text: 'Zařízení, které dodává energie v případě výpadku hlavní sítě (např. dieselagregát nebo bateriové úložiště). ' },
+                    { letter: 'z', term: 'Zbytkové teplo', text: 'Teplo, které vzniká jako vedlejší produkt při výrobě elektřiny nebo v průmyslu a které lze dále využít, např. pro dálkové vytápění měst.' },
+                    { letter: 'z', term: 'Zdroj energie', text: 'Souhrnné označení pro jakýkoliv zdroj nebo surovinu, ze které lze získat užitečnou energii (slunce, vítr, uhlí, jádro).' },
+                    { letter: 'z', term: 'Zemnicí soustava', text: 'Síť vodičů a zemničů v zemi, která zajišťuje, aby nežádoucí proudy (např. při úderu blesku nebo poruše) bezpečně odešly do země.' },
+                    { letter: 'z', term: 'Zkrat', text: 'Nežádoucí vodivé spojení dvou fází nebo fáze a země, při kterém protéká obvodem extrémně vysoký proud. Systém se v takovém případě musí okamžitě odpojit jističem.' },
+                ];
+                const searchInput = document.getElementById('slovnikSearch');
+                const letterButtons = document.querySelectorAll('.letter-btn');
+                const modal = document.getElementById('slovnikModal');
+                const modalClose = document.getElementById('slovnikModalClose');
+                const modalInner = modal.querySelector('.modal-inner');
+
+                let activeLetter = 'vse';
+
+                // OTEVŘENÍ MODÁLU S VÝSLEDKY
+                function showResults() {
+                    const query = (searchInput.value || '').trim().toLowerCase();
+
+                    const filtered = TERMS.filter(item => {
+                        const matchLetter = activeLetter === 'vse' || item.letter === activeLetter;
+                        const haystack = (item.term + ' ' + item.full + ' ' + item.text).toLowerCase();
+                        const matchSearch = !query || haystack.includes(query);
+                        return matchLetter && matchSearch;
+                    });
+
+                    // Vyčisti obsah modálu
+                    modalInner.innerHTML = '';
+
+                    if (filtered.length === 0) {
+                        modalInner.innerHTML = '<p style="text-align:center; font-size:1.2rem;">Pro zadané filtrování nebyl nalezen žádný pojem.</p>';
+                    } else {
+                        const countText = filtered.length === 1 ? '1 výsledek' : `${filtered.length} výsledky`;
+                        modalInner.innerHTML = `<h2 style="text-align:center; margin-bottom:2rem;">Nalezeno: ${countText}</h2>`;
+
+                        filtered.forEach(item => {
+                                const itemHTML = `
+                                    <div class="slovnik-result-item">
+                                        <div class="slovnik-result-header">
+                                            <div>
+                                                <strong>${item.term}</strong>
+                                                ${item.full ? '<span class="full-text">– ' + item.full + '</span>' : ''}
+                                            </div>
+                                            <span class="slovnik-arrow">▼</span>
+                                        </div>
+                                        <div class="slovnik-result-body">
+                                            <p>${item.text}</p>
+                                        </div>
+                                    </div>
+                                `;
+                            modalInner.insertAdjacentHTML('beforeend', itemHTML);
+                        });
+                    }
+
+                    modal.style.display = 'flex';
+                    document.body.classList.add('modal-open');
+                }
+
+                // ZAVŘENÍ MODÁLU
+                function closeModal() {
+                    modal.style.display = 'none';
+                    document.body.classList.remove('modal-open');
+                }
+
+                // EVENT LISTENERS
+                modalClose.addEventListener('click', closeModal);
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) closeModal();
+                });
+
+                // Klik na písmeno → filtr + otevři modál s výsledky
+                letterButtons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        letterButtons.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        activeLetter = btn.dataset.letter;
+                        showResults();
+                    });
+                });
+
+                // Enter ve vyhledávání → filtr + otevři modál
+                searchInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        showResults();
+                    }
+                });
+
+                // Accordion funkce – rozbalení/sbalení popisu po kliknutí na řádek
+                modalInner.addEventListener('click', (e) => {
+                    const header = e.target.closest('.slovnik-result-header');
+                    if (!header) return;
+
+                    const item = header.parentElement;
+                    const body = item.querySelector('.slovnik-result-body');
+                    const arrow = header.querySelector('.slovnik-arrow');
+
+                    item.classList.toggle('open');
+                    if (item.classList.contains('open')) {
+                        body.style.maxHeight = body.scrollHeight + 'px';
+                        arrow.textContent = '▲';
+                    } else {
+                        body.style.maxHeight = '0';
+                        arrow.textContent = '▼';
+                    }
+                });
+            }
+        }
+
+        // ====================== FUNKCE PRO FILTROVÁNÍ AKTUALIT ======================
+        function initCategoryFilter() {
+            const aktualitySection = document.querySelector('.aktuality');
+            if (!aktualitySection) return;
+
+            // Najdeme existující nadpis
+            const h1 = aktualitySection.querySelector('h1');
+            if (!h1) return;
+
+            // Vytvoříme container pro filtr
+            const filterContainer = document.createElement('div');
+            filterContainer.className = 'category-filter-container';
+            filterContainer.style.margin = '0 auto 3rem auto';
+            filterContainer.style.maxWidth = '1200px';
+            filterContainer.style.textAlign = 'center';
+
+            // Vytvoříme dropdown menu
+            const dropdownHTML = `
+                <div class="aktuality-category-select" style="display: inline-block; margin: 0 auto; position: relative;">
+                    <button class="aktuality-category-btn" aria-expanded="false" 
+                            style="background-color: #f8f9fa; color: #333; padding: 14px 20px; 
+                                   font-size: 16px; font-weight: 600; border: 1px solid #ddd;
+                                   border-radius: 6px; cursor: pointer; text-align: left;
+                                   min-width: 250px; position: relative;">
+                        Všechny kategorie
+                        <span style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%);">▼</span>
+                    </button>
+                    <div class="aktuality-category-content" 
+                         style="display: none; position: absolute; background: white; 
+                                min-width: 250px; box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+                                border-radius: 14px; z-index: 20; margin-top: 8px;
+                                border: 1px solid #e4e7ec; padding: 6px 0; left: 0; right: 0;">
+                        <button data-category="all" style="width: 100%; border: none; background: transparent;
+                                text-align: left; padding: 10px 16px; font-size: 15px; color: #101828;
+                                cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                            <span style="color: #94e3c2; font-size: 8px;">●</span>
+                            Všechny kategorie
+                        </button>
+                        <button data-category="Tisková zpráva EDC" style="width: 100%; border: none; background: transparent;
+                                text-align: left; padding: 10px 16px; font-size: 15px; color: #101828;
+                                cursor: pointer; display: flex; align-items: center; gap: 6px; border-top: 1px solid #f1f3f5;">
+                            <span style="color: #94e3c2; font-size: 8px;">●</span>
+                            Tisková zpráva EDC
+                        </button>
+                        <button data-category="Mediální výstup" style="width: 100%; border: none; background: transparent;
+                                text-align: left; padding: 10px 16px; font-size: 15px; color: #101828;
+                                cursor: pointer; display: flex; align-items: center; gap: 6px; border-top: 1px solid #f1f3f5;">
+                            <span style="color: #94e3c2; font-size: 8px;">●</span>
+                            Mediální výstup
+                        </button>
+                        <button data-category="Aktualita" style="width: 100%; border: none; background: transparent;
+                                text-align: left; padding: 10px 16px; font-size: 15px; color: #101828;
+                                cursor: pointer; display: flex; align-items: center; gap: 6px; border-top: 1px solid #f1f3f5;">
+                            <span style="color: #94e3c2; font-size: 8px;">●</span>
+                            Aktualita
+                        </button>
+                        <button data-category="Událost" style="width: 100%; border: none; background: transparent;
+                                text-align: left; padding: 10px 16px; font-size: 15px; color: #101828;
+                                cursor: pointer; display: flex; align-items: center; gap: 6px; border-top: 1px solid #f1f3f5;">
+                            <span style="color: #94e3c2; font-size: 8px;">●</span>
+                            Událost
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            filterContainer.innerHTML = dropdownHTML;
+            
+            // Vložíme filtr za nadpis
+            h1.insertAdjacentElement('afterend', filterContainer);
+
+            // Inicializace funkcionality
+            const dropdown = filterContainer.querySelector('.aktuality-category-select');
+            const btn = dropdown.querySelector('.aktuality-category-btn');
+            const content = dropdown.querySelector('.aktuality-category-content');
+            const categoryButtons = content.querySelectorAll('button[data-category]');
+
+            // Toggle dropdown
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                dropdown.classList.toggle('active');
+                content.style.display = dropdown.classList.contains('active') ? 'block' : 'none';
+                this.setAttribute('aria-expanded', dropdown.classList.contains('active'));
+            });
+
+            // Klik na kategorii
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Aktualizace textu tlačítka
+                    btn.textContent = this.textContent.trim();
+                    
+                    // Filtrování aktualit
+                    const rows = document.querySelectorAll('.aktualita-row');
+                    rows.forEach(row => {
+                        const rowCategory = row.getAttribute('data-category') || 
+                                           row.querySelector('.aktualita-category')?.textContent?.trim() || 
+                                           '';
+                        
+                        if (category === 'all' || rowCategory === category) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+
+                    // Zavřít dropdown
+                    dropdown.classList.remove('active');
+                    content.style.display = 'none';
+                    btn.setAttribute('aria-expanded', 'false');
+
+                    // Scroll na začátek sekce
+                    aktualitySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            // Klik mimo dropdown - zavření
+            document.addEventListener('click', function(e) {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove('active');
+                    content.style.display = 'none';
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // ESC pro zavření
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && dropdown.classList.contains('active')) {
+                    dropdown.classList.remove('active');
+                    content.style.display = 'none';
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
+        // ====================== ROUTING ======================
+        document.addEventListener('DOMContentLoaded', () => {
+            const filename = window.location.pathname.split('/').pop() || 'index.html';
+            const hash = window.location.hash.substring(1);
+
+            let contentPath = 'index_content.html';
+
+            const contentMap = {
+                'index.html': 'index_content.html',
+                'aktuality.html': 'aktuality_content.html',
+                'kariera.html': 'kariera_content.html',
+                'FAQ.html': 'faq_content.html',
+                'interoperabilita.html': 'interoperabilita_content.html',
+                'slovnik.html': 'slovnik_content.html',
+
+                // Akumulace
+                'akumulace.html': 'akumulace_content.html',
+                'akumulace-dokumenty.html': 'akumulace_dokumenty_content.html',
+                'akumulace-video.html': 'akumulace_video_content.html',
+                'akumulace-faq.html': 'akumulace_faq_content.html'
+            };
+
+            if (contentMap[filename]) {
+                contentPath = contentMap[filename];
+            }
+
+            if (hash && contentMap[hash + '.html']) {
+                contentPath = contentMap[hash + '.html'];
+            }
+
+            loadContent(contentPath);
+        });
+
+        // ====================== COOKIE BANNER ======================
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/`;
+        }
+
+        function getCookie(name) {
+            const matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+            return matches ? decodeURIComponent(matches[1]) : undefined;
+        }
+
+        const banner = document.getElementById('cookie-banner');
+        if (!getCookie('cookie_consent')) {
+            banner.style.display = 'block';
+        }
+
+        document.getElementById('accept-all')?.addEventListener('click', () => {
+            setCookie('cookie_consent', 'all', 365);
+            banner.style.display = 'none';
+        });
+
+        document.getElementById('necessary-only')?.addEventListener('click', () => {
+            setCookie('cookie_consent', 'necessary', 365);
+            banner.style.display = 'none';
+        });
+
+        document.getElementById('reject-all')?.addEventListener('click', () => {
+            setCookie('cookie_consent', 'rejected', 365);
+            banner.style.display = 'none';
+        });
+
+        // ====================== ERROR BANNER ======================
+        const errorBanner = document.getElementById('error-banner');
+        const closeBtn = errorBanner?.querySelector('.close-btn');
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                errorBanner.classList.add('hidden');
+                localStorage.setItem('error-banner-hidden', 'true');
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !errorBanner?.classList.contains('hidden')) {
+                errorBanner.classList.add('hidden');
+                localStorage.setItem('error-banner-hidden', 'true');
+            }
+        });
+    </script>
+     <!-- Header, footer a chatbot -->
+    <script src="include.js"></script>
+</body>
+
+</html>
