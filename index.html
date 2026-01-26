@@ -9,6 +9,18 @@
     <meta name="author" content="Elektroenergetické datové centrum, a.s.">
     <meta name="robots" content="index, follow">
 
+    <title>EDC</title>
+    <script>
+        // Kontrola, jestli intro už bylo viděno
+        if (!localStorage.getItem('edc_intro_seen')) {
+            // Nastavíme příznak hned teď (ještě před přesměrováním)
+            localStorage.setItem('edc_intro_seen', 'true');
+            // Použijeme replace, aby se intro nedostalo do historie
+            window.location.replace('edc_intro.html');
+        }
+        // Jinak pokračujeme normálně v index.html
+    </script>
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="EDC – Elektroenergetické datové centrum">
@@ -303,12 +315,15 @@
             <span class="sub-close" onclick="closeSubModal('sub2-1')">×</span>
             <h2>Fakturační údaje</h2>
             <strong>Elektroenergetické datové centrum, a.s.</strong><br>
+            Na Hroudě 1492/4
+            100 00 Praha 10 – Vršovice<br> 
             IČO: 21020264<br>
             DIČ: CZ21020264<br><br>
             Bankovní spojení: Komerční banka, a.s.<br>
             Číslo účtu: 131-1380440247/0100<br>
             IBAN: CZ96 0100 0001 3113 8044 0247<br>
-            SWIFT: KOMBCZPPXXX
+            SWIFT: KOMBCZPPXXX<br><br>
+            ID datové schránky: i68u6qe 
         </div>
     </div>
 
@@ -319,7 +334,8 @@
             <strong>Elektroenergetické datové centrum, a.s.</strong><br>
             Dock In One<br>
             Voctářova 2449/5<br>
-            180 00 Praha 8 - Libeň
+            180 00 Praha 8 - Libeň<br><br>
+            ID datové schránky: i68u6qe
         </div>
     </div>
 
@@ -341,7 +357,7 @@
             <h2>Call centrum EDC</h2>
             <strong>PO – PÁ: 8:00 – 16:00</strong><br><br>
             <strong>Volání z ČR:</strong> 800 720 204 <small>(zdarma)</small><br>
-            <strong>Ze zahraničí:</strong> +420 519 799 300<br><br>
+            <strong>Ze zahraničí:</strong> +420 519 799 300 (linka je zpoplatněna)<br><br>
             <strong>E-mail:</strong> <a href="mailto:info@edc-cr.cz">info@edc-cr.cz</a>
         </div>
     </div>
