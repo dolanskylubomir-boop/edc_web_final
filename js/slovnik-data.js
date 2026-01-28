@@ -242,4 +242,5 @@ window.TERMS = [
 ];
 
 // Statistiky pro ladění
+
 console.log(`Slovník načten: ${window.TERMS.length} pojmů`);
