@@ -1154,6 +1154,11 @@
             
             console.log('Klávesa stisknuta:', event.key);
             
+            // Detekce zařízení pro optimalizaci scrollu
+            const isAndroid = /Android/i.test(navigator.userAgent);
+            const isSamsung = /Samsung/i.test(navigator.userAgent);
+            const useSmooth = !(isAndroid || isSamsung);
+            
             // Šipka vlevo - zpět
             if (event.key === 'ArrowLeft') {
                 event.preventDefault();
@@ -1176,13 +1181,21 @@
             else if (event.key === 'ArrowUp') {
                 event.preventDefault();
                 console.log('Scroll nahoru');
-                window.scrollBy({ top: -300, behavior: 'smooth' });
+                if (useSmooth) {
+                    window.scrollBy({ top: -300, behavior: 'smooth' });
+                } else {
+                    window.scrollBy(0, -300);
+                }
             }
             // Šipka dolů - scroll dolů
             else if (event.key === 'ArrowDown') {
                 event.preventDefault();
                 console.log('Scroll dolů');
-                window.scrollBy({ top: 300, behavior: 'smooth' });
+                if (useSmooth) {
+                    window.scrollBy({ top: 300, behavior: 'smooth' });
+                } else {
+                    window.scrollBy(0, 300);
+                }
             }
             // Escape - zavřít vše
             else if (event.key === 'Escape') {
@@ -1214,13 +1227,21 @@
         // ====================== SWIPE GESTA PRO MOBILY ======================
         let touchStartX = 0;
         let touchStartY = 0;
+        let isScrolling = false;
 
         document.addEventListener('touchstart', function(e) {
             touchStartX = e.changedTouches[0].screenX;
             touchStartY = e.changedTouches[0].screenY;
-        });
+            isScrolling = false;
+        }, { passive: true });
+
+        document.addEventListener('touchmove', function(e) {
+            isScrolling = true;
+        }, { passive: true });
 
         document.addEventListener('touchend', function(e) {
+            if (!isScrolling) return;
+            
             const touchEndX = e.changedTouches[0].screenX;
             const touchEndY = e.changedTouches[0].screenY;
             
@@ -1230,9 +1251,15 @@
             // Minimální vzdálenost pro swipe
             const minSwipeDistance = 50;
             
+            // Detekce zařízení
+            const isAndroid = /Android/i.test(navigator.userAgent);
+            const isSamsung = /Samsung/i.test(navigator.userAgent);
+            const useSmooth = !(isAndroid || isSamsung);
+            
             if (Math.abs(diffX) > Math.abs(diffY)) {
                 // Horizontální swipe
                 if (Math.abs(diffX) > minSwipeDistance) {
+                    e.preventDefault();
                     if (diffX > 0) {
                         // Swipe vpravo = vpřed
                         console.log('Swipe vpravo - vpřed');
@@ -1252,18 +1279,27 @@
             } else {
                 // Vertikální swipe
                 if (Math.abs(diffY) > minSwipeDistance) {
+                    e.preventDefault();
                     if (diffY > 0) {
                         // Swipe dolů = scroll dolů
                         console.log('Swipe dolů');
-                        window.scrollBy({ top: 300, behavior: 'smooth' });
+                        if (useSmooth) {
+                            window.scrollBy({ top: 300, behavior: 'smooth' });
+                        } else {
+                            window.scrollBy(0, 300);
+                        }
                     } else {
                         // Swipe nahoru = scroll nahoru
                         console.log('Swipe nahoru');
-                        window.scrollBy({ top: -300, behavior: 'smooth' });
+                        if (useSmooth) {
+                            window.scrollBy({ top: -300, behavior: 'smooth' });
+                        } else {
+                            window.scrollBy(0, -300);
+                        }
                     }
                 }
             }
-        });
+        }, { passive: false });
     </script>
     
     <!-- Header, footer a chatbot -->
