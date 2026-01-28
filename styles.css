@@ -245,6 +245,14 @@ header {
     outline: 4px solid #ffffff;
     outline-offset: 4px;
 }
+/* ===================================================================
+   Nedělení slov na mobilu)
+   =================================================================== */
+.text-bez-deleni {
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
 
 /* ===================================================================
    HERO SEKCE A DLAŽDICE (převážně index.html)
@@ -2391,4 +2399,5 @@ footer a .download-info,
         bottom: 12px !important;
     }
 }
+
 
