@@ -245,14 +245,6 @@ header {
     outline: 4px solid #ffffff;
     outline-offset: 4px;
 }
-/* ===================================================================
-   Nedělení slov na mobilu)
-   =================================================================== */
-.text-bez-deleni {
-  -webkit-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-}
 
 /* ===================================================================
    HERO SEKCE A DLAŽDICE (převážně index.html)
@@ -2399,5 +2391,46 @@ footer a .download-info,
         bottom: 12px !important;
     }
 }
+
+
+/* === ZABRÁNĚNÍ DĚLENÍ SLOV – MOBIL + TABLET + DESKTOP === */
+body,
+p,
+li,
+h1, h2, h3, h4, h5, h6,
+div, span, a,
+.text-bez-deleni,
+main,
+.container,
+.zprava-content,
+.edc-content-page,
+.aktuality,
+.hero,
+.modal-content,
+.modal-inner,
+footer {
+    /* Nejčastější a nejlepší varianta */
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    -ms-hyphens: none !important;
+
+    /* velmi dobrá pojistka */
+    word-break: normal;
+    overflow-wrap: normal;
+
+    /* volitelně – ještě větší jistota */
+    /* word-wrap: normal; */           /* starší název */
+    /* hyphens: manual; */             /* povolí jen ruční &shy; */
+}
+
+/* ───────────────────────────────────────────────────────────────
+   Pokud přesto někde chcete povolit dělení (např. dlouhé odstavce)
+   ─────────────────────────────────────────────────────────────── */
+.dovoleno-deleni {
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+}
+
 
 
