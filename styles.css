@@ -15,6 +15,8 @@ body {
     background: linear-gradient(135deg, var(--light) 0%, var(--white) 50%, var(--gray) 100%);
     color: #333;
     line-height: 1.6;
+    position: relative;
+    min-height: 100vh;
 }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 main { margin-top: 90px; padding: 4rem 0 2.5rem 0; }
@@ -250,6 +252,26 @@ header {
     outline-offset: 4px;
 }
 
+/* Základ pro mobil (obrázek je na 100% šířky kontejneru) */
+.structure-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Vycentrování a mezery */
+}
+
+/* Úprava pro desktop (šířka obrazovky nad 768px nebo 992px) */
+@media (min-width: 992px) {
+    .structure-image {
+        max-width: 600px; /* Zde nastavte požadovanou šířku v pixelech nebo % */
+        /* Alternativně: max-width: 50%; */
+    }
+}
+
+/* Volitelné: zarovnání textu pod obrázkem, pokud je potřeba */
+.image-full {
+    text-align: center;
+}
 
 /* ===================================================================
    HERO SEKCE A DLAŽDICE (převážně index.html)
@@ -2569,7 +2591,180 @@ const focusStyles = `
 .sub-modal[aria-hidden="false"] {
     visibility: visible;
     opacity: 1;
-}`
+}
 
+/* ==================== BOČNÍ PANEL - ENERGETICKÉ SPOLEČNOSTI ==================== */
+.side-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background-color: rgb(196, 240, 222); /* RGB 196,240,222 */
+    color: #000000; /* Černé písmo */
+    z-index: 1000;
+    padding: 1.5rem;
+    box-shadow: 5px 0 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+}
 
+.side-panel.active {
+    transform: translateX(0);
+}
 
+/* Tlačítko pro otevření panelu */
+.side-panel-toggle {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background: rgb(196, 240, 222);
+    color: #000000;
+    border: 2px solid #0a3d3d;
+    border-radius: 0 10px 10px 0;
+    padding: 12px 8px;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.side-panel-toggle:hover {
+    background: rgb(180, 220, 202);
+    padding-left: 12px;
+}
+
+.side-panel-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #0a3d3d;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    color: rgb(196, 240, 222);
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.side-panel-close:hover {
+    background: #083030;
+}
+
+/* Sekce s logy */
+.energy-logos {
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.energy-logos h4 {
+    color: #000000;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    border-bottom: 2px solid #0a3d3d;
+    padding-bottom: 0.5rem;
+}
+
+.logos-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+}
+
+.logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #000000;
+    padding: 1.2rem;       /* Mírně zvětšený prostor pro logo */
+    border-radius: 10px;
+    background: #ffffff;    /* Čistě bílá pro maximální čitelnost loga */
+    transition: all 0.3s ease;
+    border: 1px solid rgba(10, 61, 61, 0.2);
+}
+
+.logo-item:hover {
+    background: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: #0a3d3d;
+}
+
+/* --- UPRAVENO PRO MAXIMÁLNÍ ČITELNOST --- */
+.logo-img {
+    width: 100%;          
+    height: 85px;         /* Optimalizovaná výška pro obdélníková loga */
+    border-radius: 0;     
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.8rem;
+    background: transparent; 
+    border: none;            
+    overflow: hidden;     /* Aby logo nepřetékalo */
+}
+
+/* Zajištění, aby vložený obrázek vyplnil prostor správně a byl ostrý */
+.logo-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;  /* Zabrání deformaci, logo bude celé a pěkné */
+}
+
+/* --- Zrušeny barvy log, aby zůstala jen čistá loga z adresáře --- */
+.logo-img.cezdi, 
+.logo-img.pre, 
+.logo-img.egd, 
+.logo-img.ceps, 
+.logo-img.ote,
+.logo-img.eru {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.logo-item span {
+    font-size: 0.95rem;   /* Trochu čitelnější písmo */
+    font-weight: 600;     /* Tučnější pro lepší čitelnost */
+    text-align: center;
+    color: #000000;
+    line-height: 1.3;
+}
+
+/* Responzivita */
+@media (max-width: 768px) {
+    .side-panel {
+        width: 100%;
+        max-width: 300px;
+        padding: 1rem;
+    }
+    
+    .side-panel-toggle {
+        display: none;
+    }
+    
+    .logos-grid {
+        gap: 1rem;
+    }
+    
+    .logo-img {
+        height: 70px;
+    }
+    
+    .logo-item span {
+        font-size: 0.85rem;
+    }
+}
