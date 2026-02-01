@@ -846,6 +846,7 @@
                 if (!modal || !modalInner) return;
                 
                 let activeLetter = 'vse';
+                
 
                 function showResults() {
                     if (!window.TERMS || window.TERMS.length === 0) {
@@ -905,19 +906,41 @@
                     if (e.target === modal) closeModalFunc();
                 });
 
-                letterButtons.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        if (!window.TERMS || window.TERMS.length === 0) {
-                            alert('Slovník není načten. Obnovte stránku prosím.');
-                            return;
-                        }
-                        
-                        letterButtons.forEach(b => b.classList.remove('active'));
-                        btn.classList.add('active');
-                        activeLetter = btn.dataset.letter;
-                        showResults();
+                    letterButtons.forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            if (!window.TERMS || window.TERMS.length === 0) {
+                                alert('Slovník není načten. Obnovte stránku prosím.');
+                                return;
+                            }
+                            
+                            // 1. Odebrat aktivní stav a efekty ze všech tlačítek
+                            letterButtons.forEach(b => {
+                                b.classList.remove('active');
+                                b.classList.remove('flash-effect');
+                                // Reset animace
+                                b.style.animation = 'none';
+                                void b.offsetWidth; // Force reflow
+                                b.style.animation = null;
+                            });
+                            
+                            // 2. Přidat flash efekt na kliknuté tlačítko
+                            this.classList.add('flash-effect');
+                            
+                            // 3. Nastavit aktivní stav po dokončení animace
+                            setTimeout(() => {
+                                this.classList.remove('flash-effect');
+                                this.classList.add('active');
+                            }, 700); // Časování podle délky animace (0.7s)
+                            
+                            // 4. Aktualizovat výběr a zobrazit výsledky
+                            activeLetter = this.dataset.letter;
+                            
+                            // 5. Zpožděné zobrazení výsledků (pro lepší UX)
+                            setTimeout(() => {
+                                showResults();
+                            }, 350); // Polovina animace flash efektu
+                        });
                     });
-                });
 
                 slovnikSearch.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter') {
@@ -947,8 +970,21 @@
                         arrow.textContent = '▼';
                     }
                 });
+            
+            // --- EFEKT BLIKÁNÍ PRO TLAČÍTKA PÍSMEN ---
+                const letters = document.querySelectorAll('.letter-btn');
+                letters.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        // Přidáme třídu pro bliknutí
+                        this.classList.add('is-clicked');
+                        
+                        // Po 400ms (délka animace) třídu odebereme, aby se dala použít znovu
+                        setTimeout(() => {
+                            this.classList.remove('is-clicked');
+                        }, 400);
+                    });
+                });
             }
-
             // ====================== FUNKCE PRO FILTROVÁNÍ AKTUALIT ======================
             function initCategoryFilter() {
                 const aktualitySection = document.querySelector('.aktuality');
